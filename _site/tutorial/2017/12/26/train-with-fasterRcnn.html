@@ -1,0 +1,18 @@
+<p>  转载：<a href="http://weiSupreme.github.io/assets/note/generate-voc2007-for-fasterRcnn.pdf">创建自己的VOC2007格式的数据集</a> (the link of original blog <a href="http://blog.csdn.net/sinat_30071459/article/details/50723212">click here</a>)</p>
+
+<p>  转载：<a href="http://weiSupreme.github.io/assets/note/train-ownData-fasterRcnn.pdf">用faster-rcnn训练自己的数据集</a>  (the link of original blog <a href="http://blog.csdn.net/sinat_30071459/article/details/51332084">click here</a>)</p>
+
+<p>  <a href="/assets/note/object_labelImg-master.zip">点这里下载用于制作标签的LabeilImage</a></p>
+
+<p>  <a href="/assets/note/tools-for-generate-datastes.zip">点这里下载用于制作xml文件的工具</a></p>
+
+<p>问题解决：
+  1、修改faster-rcnn默认的图片格式和目标种类<img src="/assets/note/faster-rcnn-jpg-class.png" alt="" /></p>
+
+<p>  2、’module’ has no attribute ‘text_format’<img src="/assets/note/faster-rcnn-protobuf-txt-format-error.png" alt="" /></p>
+
+<p>  3、ValueError: total size of new array must be unchanged
+<img src="/assets/note/faster-rcnn-data-odd.png" alt="" /></p>
+
+<p>  4、KeyError: max_overlaps  (IndexError: list index out of range): 删除data下的2个cache文件夹</p>
+

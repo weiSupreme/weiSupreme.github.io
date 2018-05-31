@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="/js/jquery1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        if (window.location.toString().indexOf("shtml?") > 0) {
+            self.location = window.location.toString().replace(window.location.search.toString(), "");
+        }
+        $.ajax({
+            type: "get",
+            async: true,
+            url: "http://blockart.360doc.com/ajax/getstatus.ashx?aid=415260141",
+            dataType: "jsonp",
+            jsonp: "callbackparam",
+            success: function (json) {
+                if (json[0].result=="1") {
+                    self.location = "http://www.360doc.com/noarticle.aspx";
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        if (navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("Android") > 0 || navigator.userAgent.indexOf("iPod") > 0) {  //手机端跳转
+            var patt1 = new RegExp("[0-9]*_[0-9]*");
+            var url = patt1.exec(location.href);
+            if (url != "") {
+                self.location = "http://www.360doc.cn/article/" + url + ".html";
+            }
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta content="360doc" name="classification" /><link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/474846_415260141.html"/><meta content="git,分支,master" name=keywords><meta content="Git中从远程的分支获取最新的版本到本地" name=description><meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/474846_415260141.html"/><meta content="Git中从远程的分支获取最新的版本到本地Git中从远程的分支获取最新的版本到本地有这样2个命令：1. git fetch：相当于是从远程获取最新版本到本地，不会自动merge    git fetch origin mastergit log -p master..origin/mastergit merge origin/master.上述过程其实可以用以下更清晰的方式来进行：   git fetch origin master:tmpgit diff tmp git merge tmp." name=360docabstract><meta content="www.360doc.com" name="author" /><title>
+	Git中从远程的分支获取最新的版本到本地
+</title>
+    <script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+    <script src="/js/indexhead.js?t=20160421" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/showarticlefollow20160329.js?t=2016041901" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.360doc.com/js/jQuery.md5.min.js?t=2016041501" type="text/javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?d86954201130d615136257dde062a503";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://css.360doc.com/wzhead-cleaned.css?t=2016040801" /><link rel="stylesheet" type="text/css" href="http://css.360doc.com/newArticle20160509.css?t=2016051701" /></head>
+<body onmouseup="setDragEnd()" onclick="delAllDiv(event)">
+    
+    <script type="text/javascript">
+        var baiduImagePlus = {
+            noLogo: true,
+            unionId: 'u2617463',
+            maxMiniAdCount: 0,
+            formList: [{ formId: 10 }]
+        };
+    </script>
+    <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/i.js"></script>
+    
+    <span id="LayerLogin"></span>
+    <div style="position: fixed; width: 100%; z-index: 2147483647; left: 0;">
+        <div class="mainnav">
+            <div class="mainnav1">
+                <div class="lf360" style="padding-left: 5px;">
+                    <a href="http://www.360doc.com/index.html">
+                        <img src="http://pubimage.360doc.com/newsite/logoo.gif" /></a>
+                </div>
+                <div style="width: 625px; padding-top: 0px; padding-left: 4px; position: absolute;">
+                    <table height="34" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr id="daohangtr">
+                                <td style="width: 185px; _width: 0px; *width: 0px !important;"></td>
+                                <td class="navwz1" width="95">
+                                    <a href="http://www.360doc.com/index.html">首&nbsp;页</a>
+                                </td>
+                                <td width="100" class="  navwz1">
+                                    <a href="http://www.360doc.com/readroom.html">阅览室</a>
+                                </td>
+                                <td width="88" class="  navwz1">
+                                    <a href="http://www.360doc.com/weekstar.html">馆友</a>
+                                </td>
+                                <td width="132" class="  navwz1">
+                                    <a href="http://www.360doc.com/my360doc.aspx">我的图书馆</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rt360" style="padding-top: 6px; width: 133px; padding-left: 38px;" id="outerdiv">
+                </div>
+                <div class=" rt360" style="padding-top: 6px; padding-right: 0px;">
+                    <div class="lf360 serch">
+                        <input name="input2" class="serchpt" id="txtSearchword" onkeydown="ongosearch()"
+                            onkeyup="showIntelliSense()" onfocus="if(this.value=='搜文章 找馆友') this.value='';this.style.color='#272727'"
+                            onblur="if(!this.value) {this.value='搜文章 找馆友';this.style.color='#b2b2b2';}" onpaste="showIntelliSense1()"
+                            type="text" value="搜文章 找馆友" />
+                    </div>
+                    <div class="lf360 ssuo">
+                        <a id="searchlinkid" href="javascript:gosearch();"></a>
+                    </div>
+                    <div id="divsearch" style="margin-top: 25px; margin-left: 1px; display: block; position: absolute; z-index: 100;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navxt">
+        </div>
+    </div>
+    <div style="height: 44px; _height: 0px; width: 100%;"></div>
+    <div class="both"></div>
+
+    <div class="doc360article_content">
+
+        <div style="height: 90px; padding-top: 13px;">
+            <div id="ADAboveArtContent">
+            </div>
+        </div>
+        <p class="clearboth"></p>
+        <div class="a_left">
+            <div id="bgchange">
+                <div class="fontsize_bgcolor_controler">
+                    <div class="a_bgcolor">
+                        <img src="http://pubimage.360doc.com/NewArticle/bgcolor.jpg" />
+                        <div class="a_colorlist">
+                            <span class="a_color1" onclick="wzhitnew(18);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color2" onclick="wzhitnew(19);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color3" onclick="wzhitnew(20);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color4" onclick="wzhitnew(21);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color5" onclick="wzhitnew(22);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color6 cur" onclick="wzhitnew(23);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                        </div>
+                    </div>
+                    <div class="a_fontsize">
+                        <img src="http://pubimage.360doc.com/NewArticle/fontSize.jpg" />
+                        <div class="fschange">
+                            <label>
+                                <input type="radio" name="font_Size" id="" value="18" onclick="wzhitnew(15);" />大
+                           
+                            </label>
+                            &nbsp;
+                           
+                            <label>
+                                <input type="radio" name="font_Size" id="" value="16" onclick="wzhitnew(16);" />中
+                           
+                            </label>
+                            &nbsp;
+                           
+                            <label>
+                                <input type="radio" name="font_Size" id="" value="14" onclick="wzhitnew(17);" />小
+                           
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="titiletext">Git中从远程的分支获取最新的版本到本地</h2>
+                <div class="article_data">
+                    <div class="article_data_left">
+                        2014-10-08
+                        <span class="a_username">&nbsp;<a href="http://www.360doc.com/userhome/474846" id="savernickname" target="_blank" onclick="wzhitnew(1);">开花结果</a>
+                        </span>
+                        <span id="articleinfo">
+                            <span id="docsource" class="a_from"></span><span id="360doc_Readnum"></span><span id="360docResaveCount"><span onclick="ShowSaverUser();wzhitnew(3);" id="360doc_saverNum" style="cursor: pointer;"></span>
+                                <span id="360doc_saverUser">
+                                    <div style="position: absolute; height: 305px; width: 144px; left: 0px; z-index: 2;" id="sameArtOuter">
+                                        <div onclick="event.cancelBubble=true;" style="overflow-y: auto; height: 300px; overflow-x: hidden; z-index: 100; right: 0px; margin-top: -10px;" id="sameArt">
+                                        </div>
+                                    </div>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                    <div id="resavelayer1" class="bdsharebuttonbox article_data_right">
+                    </div>
+                </div>
+                <div id="articlecontent" class="article_container" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event);">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td id="artContent" width="656">
+                                    Git中从远程的分支获取最新的版本到本地有这样2个命令：<br>
+<br>
+1. git fetch：相当于是从远程获取最新版本到本地，不会自动merge<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+git fetch origin master<br>
+git log -p master..origin/master<br>
+git merge origin/master<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;以上命令的含义：<br>
+&nbsp;&nbsp; 首先从远程的origin的master主分支下载最新的版本到origin/master分支上<br>
+&nbsp;&nbsp; 然后比较本地的master分支和origin/master分支的差别<br>
+&nbsp;&nbsp; 最后进行合并<br>
+<br>
+&nbsp;&nbsp; 上述过程其实可以用以下更清晰的方式来进行：<br>
+&nbsp;&nbsp; <br>
+git fetch origin master:tmp<br>
+git diff tmp <br>
+git merge tmp<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;从远程获取最新的版本到本地的test分支上<br>
+&nbsp;&nbsp; 之后再进行比较合并<br>
+<br>
+2. git pull：相当于是从远程获取最新版本并merge到本地<br>
+&nbsp;&nbsp; <br>
+git pull origin master<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;上述命令其实相当于git fetch 和 git merge<br>
+&nbsp;&nbsp;&nbsp;&nbsp;在实际使用中，git fetch更安全一些<br>
+&nbsp;&nbsp; 因为在merge前，我们可以查看更新情况，然后再决定是否合并<br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none; margin: 0 auto;">
+                    </div>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul></ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div></div>
+                <span></span>
+                <a></a>
+                <p style="margin: 0; padding: 0;"></p>
+                <p class="clearboth"></p>
+                <div class="bdsharebuttonbox bottombtn">
+                    <div class="zcommond" style="overflow: visible;">
+                        <a href="javascript:void(0);" class="btn_collect" onclick="SaveArt();wzhitnew(26);">转藏到我的图书馆</a>
+                        <a id="flowimg3" href="javascript:void(0);" class="btn_good" onclick="Showflowerlayer('sendedLayer1');wzhitnew(27);">献花（<span id="articleflowernum">0</span>）
+                        <span id="flowernumadd" style="display: none;">+1</span>
+
+                        </a>
+                        <span class="span1 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);wzhitnew(33);" onmouseover="this.style.color='#0f659c'" onmouseout="this.style.color=''">分享：</span>
+                        <a class="sharewx f_left" href="javascript:void(0);" onclick="shareWeixin();wzhitnew(64);">微信</a>
+                        <div class="s2 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);wzhitnew(34);"><span></span></div>
+                    </div>
+                    <div class="sharelist_new" id="fenxiangLayer2">
+                        <a class="slbg1" href="javascript:void(0);" data-cmd="qzone" onclick="wzhitnew(13);">QQ空间</a>
+                        <a class="slbg2" href="javascript:void(0);" data-cmd="sqq" onclick="wzhitnew(7);">QQ好友</a>
+                        <a class="slbg3" href="javascript:void(0);" data-cmd="tsina" onclick="wzhitnew(55);">新浪微博</a>
+                        <a class="slbg4" href="javascript:void(0);" data-cmd="tqq" onclick="wzhitnew(56);">腾讯微博</a>
+                        <a class="slbg5" href="javascript:void(0);" onclick="showdivemail1();wzhitnew(35);">推荐给朋友</a>
+                    </div>
+                </div>
+                <div class="bottom_controler">
+                    <p class="bottom_cleft">
+                        来自：
+                         <span class="a_username" style="width: auto;" onclick="wzhitnew(59)">
+                             <a href="http://www.360doc.com/userhome/474846" id="savernickname2" target="_blank">开花结果</a>
+                         </span>
+                        &gt; 
+                        <span id="cname" class="a_from" onclick="wzhitnew(60)"></span>
+                    </p>
+                    <div class="bottom_cright">
+                        <a href=" https://www.baidu.com/s?wd=git+%e5%88%86%e6%94%af+master&tn=SE_hldp01010_6r0gix1f" target="_blank" class="a1" onclick="wzhitnew(100);">以文找文</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="javascript:void(0);" class="a2" onclick="showAlertLayer1();wzhitnew(36);">举报</a>
+                    </div>
+                </div>
+                <div class="prev_next">
+                    <p id="lastart" class="p1">
+                    </p>
+                    <p id="nextart" class="p2">
+                    </p>
+                </div>
+            </div>
+            <p class="clearboth"></p>
+            <div style="width: 676px; float: left;">
+                <div class="str_border" style="border: none; position: relative; z-index: 2;">
+                    <strong>猜你喜欢</strong>
+                </div>
+                <ul class="youlike" style="margin-top: -18px; position: relative; z-index: 1;">
+                    <iframe id="youlikead" style="width: 676px; height: 280px; border: 0;" frameborder="0" scrolling="no"></iframe>
+                </ul>
+                <div class="zcommond" style="padding: 10px 0 20px;">
+                    <div class="bottom_article f_left">
+                        <div class="str_border">
+                            <strong>类似文章</strong>
+                            <a href=http://www.360doc.com/relevant/415260141_more.shtml target='_blank' class='a_more f_right'  onclick='wzhitnew(38)'>更多</a>
+                        </div>
+                        <ul class="barticle_list">
+                            
+                                    <li><span><a href=http://www.360doc.com/content/11/0117/18/2036337_87177028.shtml target=_blank onclick='wzhitnew(37)'>Git clone远程分支</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/13/0623/18/11644963_295006418.shtml target=_blank onclick='wzhitnew(37)'>3部免费可得的中文版Git教程 | Cherrot</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/12/0602/16/2660674_215429880.shtml target=_blank onclick='wzhitnew(37)'>git 提交修改到github上</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/14/0919/10/19315284_410639672.shtml target=_blank onclick='wzhitnew(37)'>git pull push没有指定branch报错的解决...</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/13/0321/11/7044580_272867746.shtml target=_blank onclick='wzhitnew(37)'>git常用命令</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/12/0108/10/7492958_178038909.shtml target=_blank onclick='wzhitnew(37)'>Git 追踪分支</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/13/0407/16/7044580_276714543.shtml target=_blank onclick='wzhitnew(37)'>git push</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/11/1114/15/1016783_164269963.shtml target=_blank onclick='wzhitnew(37)'>Git开发管理之道</a></span></li>
+                                
+                        </ul>
+                    </div>
+                    <div class="bottom_article f_right">
+                        <div class="str_border">
+                            <strong>精选文章</strong>
+                        </div>
+                        <ul class="barticle_list">
+                            
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/13/0818/09/8235852_307976066.shtml target=_blank onclick='wzhitnew(37)'>文章2012电影《亲家过年》</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/14/0129/14/3256622_348733946.shtml target=_blank onclick='wzhitnew(37)'>考古界都不乐于见到的发现！</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/14/0205/12/2734997_349941514.shtml target=_blank onclick='wzhitnew(37)'>想发财的注意</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/14/1026/15/535749_420067020.shtml target=_blank onclick='wzhitnew(37)'>天生具有领导潜力的人的7个习惯</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/14/0327/08/5473201_364063467.shtml target=_blank onclick='wzhitnew(37)'>母亲的影响力</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/13/1202/13/3397672_333863749.shtml target=_blank onclick='wzhitnew(37)'>肯定用得上：出国金融你可能会问到的19个问题,不看就吃亏了</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/12/0904/10/9272557_234190106.shtml target=_blank onclick='wzhitnew(37)'>超大精美保眼图片，不做桌麵是妳眼睛的損失！！</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/13/0824/10/3328689_309507647.shtml target=_blank onclick='wzhitnew(37)'>人间仙境，令人心醉的美</a></span></li>
+                                
+                        </ul>
+                    </div>
+                </div>
+                
+                <iframe id="underZcommondAd" style="width: 676px; height: 202px;" frameborder="0" scrolling="no"></iframe>
+                <div class="zcommond" style="margin-top: 10px;">
+                    
+                    <div class="f_left" style="width: 300px; height: 90px;">
+                        <iframe id="aboveReflectionAd1" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    
+                    <div class="f_left" style="width: 300px; height: 90px; margin-left: 44px;">
+                        <iframe id="aboveReflectionAd2" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+
+                <p></p>
+                <div id="ReflectionPart">
+                    <div style="height: 156px; margin: 0px 0px;">
+                        <div class="plbox">
+                            <div class="plmain">
+                                <div class="titwx" style="height: 23px;">
+                                    发表评论：
+                                </div>
+                                <textarea name="SendRefTB" id="SendRefTB" style="width: 100%; height: 75px; border: 1px solid #e7e7e7; background-color: #fff; overflow: auto; font-size: 12px;"
+                                    onfocus="testContent(1);" onblur="testContent(2)"></textarea>
+                                <div style="text-align: right; padding-right: 3px; padding-top: 6px;">
+                                    <div class="huifubt">
+                                        <a id="ImgSendPL" href="javascript:void(0);" onclick="SubmitReflection();wzhitnew(50);"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top: 15px; padding-left: 15px;" id="Reflction">
+                </div>
+            </div>
+        </div>
+        <div class="a_right">
+            <div class="user_info">
+                <div class="user_photo f_left">
+                    <p class="user_photopic">
+                        <a href="http://www.360doc.com/userhome/474846" id="userphotourl" target="_blank" onclick="wzhitnew(28);">
+                            <img src="http://userimage2.360doc.com/10/0309/12/474846_201003091226350639_main.jpg" id="userphoto" width="58" height="58" />
+                        </a>
+                    </p>
+                    <a href="javascript:void(0);" onclick="docTalk();wzhitnew(106);" class="user_talk" title="与TA对话"></a>
+                </div>
+                <div class="user_data f_right">
+                    <div class="user_data_name">
+                        <a href="http://www.360doc.com/userhome/474846" id="nickname" target="_blank" onclick="wzhitnew(29);">开花结果</a>
+                        <img src="http://pubimage.360doc.com/NewArticle/user_name_tag.gif" alt="图书馆" />
+                    </div>
+                    <p id="userdegree"><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar2.gif' /></p>
+                    <div class="user_data_num">
+                        <a id="spanfollowstatus" class="gz_no"></a>
+                        <script type="text/javascript">isfollow(474846);</script>
+                        <span id="follownum">3176</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>馆藏</span>&nbsp;<span id="artnum">5417</span>
+                    </div>
+                </div>
+            </div>
+            <div class="his_her"><ul class='his_her_type'><li class='f_left curone'>TA的最新馆藏</li></ul><div class='his_her_div' style="height:190px;"><ul class='his_her_list'><li><div><span></span><a href=http://www.360doc.com/content/16/0518/00/474846_560027831.shtml target=_blank onclick='wzhitnew(51)'>【ffmpeg学习记录】ffplay的大致流程</a></div><div><span></span><a href=http://www.360doc.com/content/16/0518/00/474846_560027585.shtml target=_blank onclick='wzhitnew(51)'>FFplay源代码分析：整体流程图</a></div><div><span></span><a href=http://www.360doc.com/content/16/0518/00/474846_560027289.shtml target=_blank onclick='wzhitnew(51)'>ffplay流程分析</a></div><div><span></span><a href=http://www.360doc.com/content/16/0517/11/474846_559837986.shtml target=_blank onclick='wzhitnew(51)'>强大的vim配置文件，让编程更随意</a></div><div><span></span><a href=http://www.360doc.com/content/16/0517/01/474846_559750461.shtml target=_blank onclick='wzhitnew(51)'>ubuntu解压命令全览</a></div><div><span></span><a href=http://www.360doc.com/content/16/0516/10/474846_559526656.shtml target=_blank onclick='wzhitnew(51)'>ffmpeg库音频解码示例</a></div></li></ul></div></div>
+
+
+
+
+
+<div class="both" style="padding-top: 10px; height: 260px;">
+    <iframe id="ifartad1" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+    <div style="height: 10px;">
+    </div>
+</div>
+
+<div class="his_her" id="recommendArt" style="margin-top: 5px;">
+    <div class="str_border" style="margin: 0;">
+        <span style="font-size: 14px; float: left;">推荐阅读</span>
+        <a style="float: right;" class="a_more" onclick="wzhitnew(32)" href="http://www.360doc.com/readroom.html" target="_blank">更多</a>
+    </div>
+    <div class='his_her_div' style="height: 264px;">
+        <ul class='his_her_list'>
+            <li id="recommendArtLists"></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="both" style="padding-top: 10px;">
+    <iframe id="ifartad2" height="250" width="250" frameborder="0" scrolling="no"></iframe>
+</div>
+<br />
+
+
+<iframe id="ifartrightsogou" height="190" width="250" frameborder="0" scrolling="no"></iframe>
+
+
+
+            <div class="both" id="divad5" style="padding-top: 11px; zoom: 1; width: 300px;">
+                <div id="divad4" style="display: none;">
+                    <div>
+                        
+                        <iframe id="ifartad" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="ggwz">
+                        <a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+                    </div>
+                    <div style="height: 13px;">
+                    </div>
+                </div>
+                <div style="clear: both; display: none;" id="divad6">
+                    <div id="adfloatbaidu">
+                        <iframe id="ifartadfloadbaidu" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="ggwz" style="left: 25px;">
+                        <a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+                    </div>
+                    <div style="height: 13px;">
+                    </div>
+                </div>
+                <div style="height: 75px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="clearboth"></p>
+    <input type="hidden" id="docarttitle" value="Git%e4%b8%ad%e4%bb%8e%e8%bf%9c%e7%a8%8b%e7%9a%84%e5%88%86%e6%94%af%e8%8e%b7%e5%8f%96%e6%9c%80%e6%96%b0%e7%9a%84%e7%89%88%e6%9c%ac%e5%88%b0%e6%9c%ac%e5%9c%b0" />
+    <input type="hidden" id="firstartid" value="415260141" />
+    <input type="hidden" id="artreadroomid" value="0" />
+    <script src="http://www.360doc.com/js/StickySystem20160414.js?t=20160502401" type="text/javascript" charset="utf-8"></script>
+    <script>GerLookingUserInfo(1,474846,1,0,'-1',-1,10,0);OutputSource('http%3a%2f%2fblog.csdn.net%2fchb2000%2farticle%2fdetails%2f6976022','csdn博客');OutputCategory(474846,12,'%e3%80%8a%e5%ad%a6%e4%b9%a0%e8%b5%84%e6%96%99%e3%80%8b');OutputLastNextArt('FLV%e6%a0%bc%e5%bc%8f%e4%b8%8eSWF%e6%a0%bc%e5%bc%8f%e8%a7%86%e9%a2%91%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab','http://www.360doc.com/content/13/0614/16/474846_292839161.shtml',0);OutputLastNextArt('MP4%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f%e7%9a%84%e8%a7%a3%e6%9e%90%ef%bc%8c%e4%bb%a5%e5%8f%8aMP4%e6%96%87%e4%bb%b6%e7%9a%84%e5%88%86%e5%89%b2%e7%ae%97%e6%b3%95','http://www.360doc.com/content/15/0611/17/474846_477426682.shtml',1);</script>
+</body>
+</html>

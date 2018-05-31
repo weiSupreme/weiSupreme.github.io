@@ -7,7 +7,7 @@ html {
   height: 100%; }
 
 body {
-  background-image: url(https://weiSupreme.github.io/assets/images/bk2.jpg);
+  background-image: url(https://weiSupreme.github.io/assets/images/br.png);
   padding-top: 100px;
   height: 100%; }
 
@@ -52,7 +52,7 @@ body {
   line-height: 1.2em; }
 
 .sidebar a:hover {
-  color: black; }
+  color: yellow; }
 
 /* Xixia logo */
 .sidebar-header {
@@ -91,7 +91,7 @@ body {
     reference from: https://stackoverflow.com/questions/18529274/change-navbar-color-in-twitter-bootstrap-3 
 */
 .navbar-custom {
-  background-color: green;
+  background-color: #9400D3;
   color: #fff;
   border-radius: 0; }
 

@@ -1,8 +1,11 @@
 - url: "https://github.com/weiSupreme"
-  title: "My projects"
+  title: "Projects"
 
 - url: "http://blog.csdn.net/wei_supreme"
-  title: "My CSDN"
+  title: "CSDN"
+
+- url: "https://pan.baidu.com/s/1vMbOTDVNrT_NOq6uQJlJfQ"
+  title: "Papers"
  
 - url: "http://www.pchou.info/ssgithubPage/2013-01-03-build-github-blog-page-01.html"
-  title: "githubPages tutorial"
+  title: "GithubPages Tutorial"

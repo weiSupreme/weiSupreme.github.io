@@ -31,15 +31,16 @@
 {% endif %}
 
 <div class="sidebar well">
-    <h1>{{ trans.recent_posts }}</h1>
-    <ul>
-        {% for post in site.posts limit:5 %}
-          <li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-    </ul>
+    {% include sources-list.html %}
+    <li class="active"><a href="{{ site.baseurl }}/notes.html">{{ trans.notes }}</a></li>
+    <li class="active"><a href="{{ site.baseurl }}/scripts.html">{{ trans.scripts }}</a></li>
 </div>
 
 <div class="sidebar well">
     {% include links-list.html %}
+</div>
+
+<div class="sidebar well">
+    {% include no-click.html %}
 </div>
 

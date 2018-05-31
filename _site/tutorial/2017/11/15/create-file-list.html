@@ -1,0 +1,22 @@
+<p>  caffe创建自己的数据集时，首先要生成训练和验证用的图片文件名和对应标签的txt文件，train.txt和val.txt,如：52306.jpg 2。下面这个代码就是用于创建这个文件的。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env sh</span>
+<span class="nv">DATA</span><span class="o">=</span>path/to/imagenet/2
+<span class="nv">MY</span><span class="o">=</span>data/my_data/2
+
+<span class="nb">echo</span> <span class="s2">"Create train.txt..."</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$MY</span>/train.txt
+<span class="k">for </span>i <span class="k">in </span>3 4 5 6 7 
+<span class="k">do
+</span>find <span class="nv">$DATA</span>/train/ <span class="nt">-name</span> <span class="nv">$i</span><span class="k">*</span>.jpg | <span class="nb">cut</span> <span class="nt">-d</span> <span class="s1">'/'</span> <span class="nt">-f</span> 6 | <span class="nb">sed</span> <span class="s2">"s/</span><span class="nv">$/</span><span class="s2"> </span><span class="nv">$i</span><span class="s2">/"</span><span class="o">&gt;&gt;</span><span class="nv">$MY</span>/train.txt
+<span class="k">done
+</span><span class="nb">echo</span> <span class="s2">"Create val.txt..."</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$MY</span>/val.txt
+<span class="k">for </span>i <span class="k">in </span>3 4 5 6 7
+<span class="k">do
+</span>find <span class="nv">$DATA</span>/test/ <span class="nt">-name</span> <span class="nv">$i</span><span class="k">*</span>.jpg | <span class="nb">cut</span> <span class="nt">-d</span> <span class="s1">'/'</span> <span class="nt">-f</span> 6 | <span class="nb">sed</span> <span class="s2">"s/</span><span class="nv">$/</span><span class="s2"> </span><span class="nv">$i</span><span class="s2">/"</span><span class="o">&gt;&gt;</span><span class="nv">$MY</span>/val.txt
+<span class="k">done
+</span><span class="nb">echo</span> <span class="s2">"All done"</span>  
+</code></pre></div></div>
+
+<p>  其中两点需要说明一下，1、：cut -d ‘/’ -f 6，这个命令中，-d表示分隔符，-f表示选取哪个字段，因为find得到的是包含路径的文件名，而我们只需要文件名，所以需要选取特定字段。在我参考的blog中，是 -f4-5，这个是不对的。2、for循环中的3 4 5 6 7表示标签。<a href="http://http://www.cnblogs.com/denny402/p/5083300.html">原文链接</a></p>

@@ -1,0 +1,12 @@
+{% assign trans = site.data.values[site.lan] %}
+<h1>{{ trans.sources }}</h1>
+<ul>
+  <!-- <li><a href="#">One</a></li>
+  <li><a href="#">Two</a></li>
+  <li><a href="#">Three</a></li>
+  <li><a href="#">Four</a></li> -->
+  {% for link in site.data.sources %}
+  <li>
+  </li> 
+  {% endfor %}
+</ul>

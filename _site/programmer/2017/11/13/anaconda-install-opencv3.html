@@ -1,0 +1,14 @@
+<p>　　安装好opencv3.2，anacaonda, caffe后，发现不能使用opencv, import cv2失败，应该是由于安装caffe后修改了路径，于是用anaconda重新安装了opencv3,解决了不能导入的问题。 <br />
+　　打开终端，执行命令： <br />
+ <code class="highlighter-rouge">
+　　　　conda install --channel https://conda.anaconda.org/menpo opencv3
+</code></p>
+
+<p>　　验证：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	python　　　
+	import cv2
+</code></pre>
+</div>
+
+<p>　　应该不会报错了</p>

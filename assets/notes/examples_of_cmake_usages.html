@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+   
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>cmake使用示例与整理总结 - 步步为赢
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="QT显示图片 .转Posted on&#160;2012-03-13 17:17&#160;Finley&#160;阅读(10460) 评论(0)&#160;编辑&#160;收藏QT显示图片的方法有很多大致为label上显示直接画出来容器显示&#160;1---------------显示gif图片（label上显示）http://archive.cnblogs.com/a/2053701/&#160;在QT中" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/skin-yellow/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/wzzfeitian/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    <!-- 广告位开始 -->
+        <ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/wzzfeitian">步步为赢</a></h2>
+            <h3>如果你想要得到你从来没有过的东西，那么你必须去做你从来没做过的事情</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/wzzfeitian?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/wzzfeitian?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/wzzfeitian/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "wzzfeitian";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/wzzfeitian";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://edu.csdn.net/huiyiCourse/detail/130
+">
+<font color=red>【免费公开课】Gulp前端自动化教程
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/blogdevteam/article/details/51423859">
+<font color=blue>走进VR开发世界——我们离开发一款VR大作还有多远？</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/yanzi1225627/article/details/51438262">
+<font color=red>团队自研应用-本地商 开源公告
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+
+</font></a>
+</div>                        </div>
+                        
+
+
+
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/replace.min.js"></script>
+
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_code.css" />
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/saveToCode.js"></script>
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/wzzfeitian/article/details/40963457">
+        cmake使用示例与整理总结            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/cmake' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">cmake</a><a href='http://www.csdn.net/tag/makefile' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">makefile</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2014-11-10 00:37</span>
+            <span class="link_view" title="阅读次数">25196人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(1)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('cmake使用示例与整理总结','40963457');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(40963457,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            var lib = eval("("+$("#lib").attr("value")+")");
+            var html = "";
+            if (lib.err == 0) {
+                $.each(lib.data, function (i) {
+                    var obj = lib.data[i];
+                    //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                    html += ' <a href="' + obj.url + '" target="_blank">';
+                    html += ' <img src="' + obj.logo + '">';
+                    html += ' <em><b>' + obj.name + '</b></em>';
+                    html += ' </a>';
+                });
+                if (html != "") {
+                    setTimeout(function () {
+                        $("#lib").html(html);
+                        /*
+                        var testhtml = "";
+                        testhtml += '<a href="#">';
+                        testhtml += '<img src="http://img.knowledge.csdn.net/upload/base/1455589744328_328.jpg">';
+                        testhtml += '<em>Android知识库</em>';
+                        testhtml += '</a>';
+                        $(".embody_c").html(testhtml);
+                        */
+                        $("#embody").show();
+                    }, 100);
+                }
+            }          
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('1195096','wzzfeitian','top','40963457');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Linux<em>（25）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/wzzfeitian/article/category/1195096"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_1195096">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p></p>
+<div>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0px 0px 0.66em">
+本文代码托管于github &nbsp;<a target="_blank" target="_blank" href="https://github.com/carl-wang-cn/demo/tree/master/cmake">cmake_demo</a><br>
+<br>
+</h4>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0px 0px 0.66em">
+cmake中一些预定义变量</h4>
+<ul style="font-family:微软雅黑; orphans:2; widows:2; font-size:15px">
+<li style="line-height:1.4em">PROJECT_SOURCE_DIR 工程的根目录</li><li style="line-height:1.4em">PROJECT_BINARY_DIR 运行cmake命令的目录,通常是${PROJECT_SOURCE_DIR}/build</li><li style="line-height:1.4em">CMAKE_INCLUDE_PATH 环境变量,非cmake变量</li><li style="line-height:1.4em">CMAKE_LIBRARY_PATH 环境变量</li><li style="line-height:1.4em">CMAKE_CURRENT_SOURCE_DIR 当前处理的CMakeLists.txt所在的路径</li><li style="line-height:1.4em">CMAKE_CURRENT_BINARY_DIR target编译目录<br style="clear:both">
+使用ADD_SURDIRECTORY(src bin)可以更改此变量的&#20540;<br style="clear:both">
+SET(EXECUTABLE_OUTPUT_PATH &lt;新路径&gt;)并不会对此变量有影响,只是改变了最终目标文件的存储路径</li><li style="line-height:1.4em">CMAKE_CURRENT_LIST_FILE 输出调用这个变量的CMakeLists.txt的完整路径</li><li style="line-height:1.4em">CMAKE_CURRENT_LIST_LINE 输出这个变量所在的行</li><li style="line-height:1.4em">CMAKE_MODULE_PATH 定义自己的cmake模块所在的路径<br style="clear:both">
+SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake),然后可以用INCLUDE命令来调用自己的模块</li><li style="line-height:1.4em">EXECUTABLE_OUTPUT_PATH 重新定义目标二进制可执行文件的存放位置</li><li style="line-height:1.4em">LIBRARY_OUTPUT_PATH 重新定义目标链接库文件的存放位置</li><li style="line-height:1.4em">PROJECT_NAME 返回通过PROJECT指令定义的项目名称</li><li style="line-height:1.4em">CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS 用来控制IF ELSE语句的书写方式</li></ul>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:1em; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+系统信息</p>
+<ul style="font-family:微软雅黑; orphans:2; widows:2; font-size:15px">
+<li style="line-height:1.4em">CMAKE_MAJOR_VERSION cmake主版本号,如2.8.6中的2</li><li style="line-height:1.4em">CMAKE_MINOR_VERSION cmake次版本号,如2.8.6中的8</li><li style="line-height:1.4em">CMAKE_PATCH_VERSION cmake补丁等级,如2.8.6中的6</li><li style="line-height:1.4em">CMAKE_SYSTEM 系统名称,例如Linux-2.6.22</li><li style="line-height:1.4em">CAMKE_SYSTEM_NAME 不包含版本的系统名,如Linux</li><li style="line-height:1.4em">CMAKE_SYSTEM_VERSION 系统版本,如2.6.22</li><li style="line-height:1.4em">CMAKE_SYSTEM_PROCESSOR 处理器名称,如i686</li><li style="line-height:1.4em">UNIX 在所有的类UNIX平台为TRUE,包括OS X和cygwin</li><li style="line-height:1.4em">WIN32 在所有的win32平台为TRUE,包括cygwin</li></ul>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:1em; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+开关选项</p>
+<ul style="font-family:微软雅黑; orphans:2; widows:2; font-size:15px">
+<li style="line-height:1.4em">BUILD_SHARED_LIBS 控制默认的库编译方式。如果未进行设置,使用ADD_LIBRARY时又没有指定库类型,默认编译生成的库都是静态库 （可在t3中稍加修改进行验证）</li><li style="line-height:1.4em">CMAKE_C_FLAGS 设置C编译选项</li><li style="line-height:1.4em">CMAKE_CXX_FLAGS 设置C&#43;&#43;编译选项</li></ul>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake常用命令" name="cmake常用命令" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake常用命令</h4>
+<h5 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.2em; margin:0.855em 0px 0.57em">
+<a target="_blank" target="_blank" href="file:///#基本语法规则：" name="基本语法规则：" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>基本语法规则：</h5>
+<ul style="font-family:微软雅黑; orphans:2; widows:2; font-size:15px">
+<li style="line-height:1.4em">cmake变量使用${}方式取&#20540;,但是在IF控制语句中是直接使用变量名</li><li style="line-height:1.4em">环境变量使用$ENV{}方式取&#20540;,使用SET(ENV{VAR} VALUE)赋&#20540;</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">指令(参数1 参数2…)<br style="clear:both">
+参数使用括弧括起,参数之间使用空&#26684;或分号分开。</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">以ADD_EXECUTABLE指令为例：
+ADD_EXECUTABLE(hello main.c func.c)或者
+ADD_EXECUTABLE(hello main.c;func.c)
+</code></pre>
+</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">指令是大小写无关的,参数和变量是大小写相关的。推荐你全部使用<strong>大写</strong>指令。</p>
+</li></ul>
+<h5 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.2em; margin:0.855em 0px 0.57em">
+<a target="_blank" target="_blank" href="file:///#部分常用命令列表：" name="部分常用命令列表：" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>部分常用命令列表：</h5>
+<ul style="font-family:微软雅黑; orphans:2; widows:2; font-size:15px">
+<li style="line-height:1.4em">PROJECT<br style="clear:both">
+PROJECT(projectname [CXX] [C] [Java])<br style="clear:both">
+指定工程名称,并可指定工程支持的语言。支持语言列表可忽略,默认支持所有语言</li><li style="line-height:1.4em">SET<br style="clear:both">
+SET(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]])<br style="clear:both">
+定义变量(可以定义多个VALUE,如SET(SRC_LIST main.c util.c reactor.c))</li><li style="line-height:1.4em">MESSAGE<br style="clear:both">
+MESSAGE([SEND_ERROR | STATUS | FATAL_ERROR] “message to display” …)<br style="clear:both">
+向终端输出用户定义的信息或变量的&#20540;<br style="clear:both">
+SEND_ERROR, 产生错误,生成过程被跳过<br style="clear:both">
+STATUS, 输出前缀为—的信息<br style="clear:both">
+FATAL_ERROR, 立即终止所有cmake过程</li><li style="line-height:1.4em">ADD_EXECUTABLE<br style="clear:both">
+ADD_EXECUTABLE(bin_file_name ${SRC_LIST})<br style="clear:both">
+生成可执行文件</li><li style="line-height:1.4em">ADD_LIBRARY<br style="clear:both">
+ADD_LIBRARY(libname [SHARED | STATIC | MODULE] [EXCLUDE_FROM_ALL] SRC_LIST)<br style="clear:both">
+生成动态库或静态库<br style="clear:both">
+SHARED 动态库<br style="clear:both">
+STATIC 静态库<br style="clear:both">
+MODULE 在使用dyld的系统有效,若不支持dyld,等同于SHARED<br style="clear:both">
+EXCLUDE_FROM_ALL 表示该库不会被默认构建</li><li style="line-height:1.4em">SET_TARGET_PROPERTIES<br style="clear:both">
+设置输出的名称,设置动态库的版本和API版本</li><li style="line-height:1.4em">CMAKE_MINIMUM_REQUIRED<br style="clear:both">
+CMAKE_MINIMUM_REQUIRED(VERSION version_number [FATAL_ERROR])<br style="clear:both">
+声明CMake的版本要求</li><li style="line-height:1.4em">ADD_SUBDIRECTORY<br style="clear:both">
+ADD_SUBDIRECTORY(src_dir [binary_dir] [EXCLUDE_FROM_ALL])<br style="clear:both">
+向当前工程添加存放源文件的子目录,并可以指定中间二进制和目标二进制的存放位置<br style="clear:both">
+EXCLUDE_FROM_ALL含义：将这个目录从编译过程中排除</li><li style="line-height:1.4em">SUBDIRS<br style="clear:both">
+deprecated,不再推荐使用<br style="clear:both">
+(hello sample)相当于分别写ADD_SUBDIRECTORY(hello),ADD_SUBDIRECTORY(sample)</li><li style="line-height:1.4em">INCLUDE_DIRECTORIES<br style="clear:both">
+INCLUDE_DIRECTORIES([AFTER | BEFORE] [SYSTEM] dir1 dir2 … )<br style="clear:both">
+向工程添加多个特定的头文件搜索路径,路径之间用空&#26684;分隔,如果路径包含空&#26684;,可以使用双引号将它括起来,默认的行为为追加到当前头文件搜索路径的后面。有如下两种方式可以控制搜索路径添加的位置：
+<ul>
+<li style="line-height:1.4em">CMAKE_INCLUDE_DIRECTORIES_BEFORE,通过SET这个cmake变量为on,可以将添加的头文件搜索路径放在已有路径的前面</li><li style="line-height:1.4em">通过AFTER或BEFORE参数,也可以控制是追加还是置前</li></ul>
+</li><li style="line-height:1.4em">LINK_DIRECTORIES<br style="clear:both">
+LINK_DIRECTORIES(dir1 dir2 …)<br style="clear:both">
+添加非标准的共享库搜索路径</li><li style="line-height:1.4em">TARGET_LINK_LIBRARIES<br style="clear:both">
+TARGET_LINK_LIBRARIES(target lib1 lib2 …)<br style="clear:both">
+为target添加需要链接的共享库</li><li style="line-height:1.4em">ADD_DEFINITIONS<br style="clear:both">
+向C/C&#43;&#43;编译器添加-D定义<br style="clear:both">
+ADD_DEFINITIONS(-DENABLE_DEBUG -DABC),参数之间用空&#26684;分隔</li><li style="line-height:1.4em">ADD_DEPENDENCIES<br style="clear:both">
+ADD_DEPENDENCIES(target-name depend-target1 depend-target2 …)<br style="clear:both">
+定义target依赖的其他target,确保target在构建之前,其依赖的target已经构建完毕</li><li style="line-height:1.4em">AUX_SOURCE_DIRECTORY<br style="clear:both">
+AUX_SOURCE_DIRECTORY(dir VAR)<br style="clear:both">
+发现一个目录下所有的源代码文件并将列表存储在一个变量中<br style="clear:both">
+把当前目录下的所有源码文件名赋给变量DIR_HELLO_SRCS</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">EXEC_PROGRAM<br style="clear:both">
+EXEC_PROGRAM(Executable [dir where to run] [ARGS &lt;args&gt;][OUTPUT_VARIABLE &lt;var&gt;] [RETURN_VALUE &lt;value&gt;])<br style="clear:both">
+用于在指定目录运行某个程序（默认为当前CMakeLists.txt所在目录）,通过ARGS添加参数,通过OUTPUT_VARIABLE和RETURN_VALUE获取输出和返回&#20540;,如下示例</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace"><span style="color:rgb(150,152,150)"><em># 在src中运行ls命令,在src/CMakeLists.txt添加</em></span>
+EXEC_PROGRAM(ls ARGS <span style="color:rgb(138,190,183)">&quot;*.c&quot;</span> OUTPUT_VARIABLE LS_OUTPUT RETURN_VALUE LS_RVALUE)
+IF (not LS_RVALUE)
+    MESSAGE(STATUS <span style="color:rgb(138,190,183)">&quot;ls result: &quot;</span> <span style="color:rgb(255,204,102)">${LS_OUTPUT}</span>) <span style="color:rgb(150,152,150)"><em># 缩进仅为美观,语法无要求</em></span>
+ENDIF(not LS_RVALUE)
+</code></pre>
+</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">INCLUDE<br style="clear:both">
+INCLUDE(file [OPTIONAL]) 用来载入CMakeLists.txt文件<br style="clear:both">
+INCLUDE(module [OPTIONAL])用来载入预定义的cmake模块<br style="clear:both">
+OPTIONAL参数的左右是文件不存在也不会产生错误<br style="clear:both">
+可以载入一个文件,也可以载入预定义模块（模块会在CMAKE_MODULE_PATH指定的路径进行搜索）<br style="clear:both">
+载入的内容将在处理到INCLUDE语句时直接执行</p>
+</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">FIND_</p>
+<ul>
+<li style="line-height:1.4em">FIND_FILE(&lt;VAR&gt; name path1 path2 …)<br style="clear:both">
+VAR变量代表找到的文件全路径,包含文件名</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">FIND_LIBRARY(&lt;VAR&gt; name path1 path2 …)<br style="clear:both">
+VAR变量代表找到的库全路径,包含库文件名</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">FIND_LIBRARY(libX X11 /usr/lib)
+IF (NOT libx)
+    MESSAGE(FATAL_ERROR <span style="color:rgb(138,190,183)">&quot;libX not found&quot;</span>)
+ENDIF(NOT libX)
+</code></pre>
+</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">FIND_PATH(&lt;VAR&gt; name path1 path2 …)<br style="clear:both">
+VAR变量代表包含这个文件的路径</p>
+</li><li style="line-height:1.4em">FIND_PROGRAM(&lt;VAR&gt; name path1 path2 …)<br style="clear:both">
+VAR变量代表包含这个程序的全路径</li><li style="line-height:1.4em">FIND_PACKAGE(&lt;name&gt; [major.minor] [QUIET] [NO_MODULE] [[REQUIRED | COMPONENTS] [componets …]])<br style="clear:both">
+用来调用预定义在CMAKE_MODULE_PATH下的Find&lt;name&gt;.cmake模块,你也可以自己定义Find&lt;name&gt;<br style="clear:both">
+模块,通过SET(CMAKE_MODULE_PATH dir)将其放入工程的某个目录供工程使用</li></ul>
+</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">IF<br style="clear:both">
+语法：</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">IF (expression)
+    COMMAND1(ARGS ...)
+    COMMAND2(ARGS ...)
+    ...
+ELSE (expression)
+    COMMAND1(ARGS ...)
+    COMMAND2(ARGS ...)
+    ...
+ENDIF (expression) <span style="color:rgb(150,152,150)"><em># 一定要有ENDIF与IF对应</em></span></code></pre>
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">IF (expression), expression不为：空,0,N,NO,OFF,FALSE,NOTFOUND或&lt;var&gt;_NOTFOUND,为真<br style="clear:both">
+IF (not exp), 与上面相反<br style="clear:both">
+IF (var1 AND var2)<br style="clear:both">
+IF (var1 OR var2)<br style="clear:both">
+IF (COMMAND cmd) 如果cmd确实是命令并可调用,为真<br style="clear:both">
+IF (EXISTS dir) IF (EXISTS file) 如果目录或文件存在,为真<br style="clear:both">
+IF (file1 IS_NEWER_THAN file2),当file1比file2新,或file1/file2中有一个不存在时为真,文件名需使用全路径<br style="clear:both">
+IF (IS_DIRECTORY dir) 当dir是目录时,为真<br style="clear:both">
+IF (DEFINED var) 如果变量被定义,为真<br style="clear:both">
+IF (var MATCHES regex) 此处var可以用var名,也可以用${var}<br style="clear:both">
+IF (string MATCHES regex)</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">当给定的变量或者字符串能够匹配正则表达式regex时为真。比如：
+IF (<span style="color:rgb(138,190,183)">&quot;hello&quot;</span> MATCHES <span style="color:rgb(138,190,183)">&quot;ell&quot;</span>)
+    MESSAGE(<span style="color:rgb(138,190,183)">&quot;true&quot;</span>)
+ENDIF (<span style="color:rgb(138,190,183)">&quot;hello&quot;</span> MATCHES <span style="color:rgb(138,190,183)">&quot;ell&quot;</span>)
+</code></pre>
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word"><strong>数字比较表达式</strong><br style="clear:both">
+IF (variable LESS number)<br style="clear:both">
+IF (string LESS number)<br style="clear:both">
+IF (variable GREATER number)<br style="clear:both">
+IF (string GREATER number)<br style="clear:both">
+IF (variable EQUAL number)<br style="clear:both">
+IF (string EQUAL number)</p>
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word"><strong>按照字母表顺序进行比较</strong><br style="clear:both">
+IF (variable STRLESS string)<br style="clear:both">
+IF (string STRLESS string)<br style="clear:both">
+IF (variable STRGREATER string)<br style="clear:both">
+IF (string STRGREATER string)<br style="clear:both">
+IF (variable STREQUAL string)<br style="clear:both">
+IF (string STREQUAL string)</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">一个小例子,用来判断平台差异：
+IF (WIN32)
+    MESSAGE(STATUS “This is windows.”)
+ELSE (WIN32)
+    MESSAGE(STATUS “This is not windows”)
+ENDIF (WIN32)
+上述代码用来控制在不同的平台进行不同的控制,但是,阅读起来却并不是那么舒服,ELSE(WIN32)之类的语句很容易引起歧义。
+可以SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS ON)
+这时候就可以写成:
+IF (WIN32)
+ELSE ()
+ENDIF ()
+配合ELSEIF使用,可能的写法是这样:
+IF (WIN32)
+    <span style="color:rgb(150,152,150)"><em>#do something related to WIN32</em></span>
+ELSEIF (UNIX)
+    <span style="color:rgb(150,152,150)"><em>#do something related to UNIX</em></span>
+ELSEIF(APPLE)
+    <span style="color:rgb(150,152,150)"><em>#do something related to APPLE</em></span>
+ENDIF (WIN32)
+</code></pre>
+</li><li style="line-height:1.4em">
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">WHILE<br style="clear:both">
+语法：</p>
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">WHILE(condition)
+    COMMAND1(ARGS ...)
+    COMMAND2(ARGS ...)
+    ...
+ENDWHILE(condition)
+</code></pre>
+<p style="margin-top:1em; margin-bottom:1em; word-wrap:break-word">其真假判断条件可以参考IF指令</p>
+</li><li style="line-height:1.4em">FOREACH<br style="clear:both">
+FOREACH指令的使用方法有三种形式：
+<ol>
+<li style="line-height:1.4em">列表<br style="clear:both">
+语法：
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">FOREACH(loop_var arg1 arg2 ...)
+     COMMAND1(ARGS ...)
+     COMMAND2(ARGS ...)
+ ...
+ENDFOREACH(loop_var)
+</code></pre>
+示例：
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">AUX_SOURCE_DIRECTORY(. SRC_LIST)
+FOREACH(F <span style="color:rgb(255,204,102)">${SRC_LIST}</span>)
+     MESSAGE(<span style="color:rgb(255,204,102)">${F}</span>)
+ENDFOREACH(F)
+</code></pre>
+</li><li style="line-height:1.4em">范围<br style="clear:both">
+语法：
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">FOREACH(loop_var RANGE total)
+    COMMAND1(ARGS ...)
+    COMMAND2(ARGS ...)
+    ...
+ENDFOREACH(loop_var)
+</code></pre>
+示例：
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">从<span style="color:rgb(249,145,87)">0</span>到total以１为步进
+FOREACH(VAR RANGE <span style="color:rgb(249,145,87)">10</span>)
+   MESSAGE(<span style="color:rgb(255,204,102)">${VAR}</span>)
+ENDFOREACH(VAR)
+输出：
+<span style="color:rgb(249,145,87)">0</span><span style="color:rgb(249,145,87)">1</span><span style="color:rgb(249,145,87)">2</span><span style="color:rgb(249,145,87)">3</span><span style="color:rgb(249,145,87)">4</span><span style="color:rgb(249,145,87)">5</span><span style="color:rgb(249,145,87)">6</span><span style="color:rgb(249,145,87)">7</span><span style="color:rgb(249,145,87)">8</span><span style="color:rgb(249,145,87)">9</span><span style="color:rgb(249,145,87)">10</span></code></pre>
+</li><li style="line-height:1.4em">范围和步进<br style="clear:both">
+语法：
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">FOREACH(loop_var RANGE start stop [step])
+    COMMAND1(ARGS ...)
+    COMMAND2(ARGS ...)
+    ...
+ENDFOREACH(loop_var)
+</code></pre>
+从start开始到stop结束,以step为步进,<br style="clear:both">
+<strong>注意：</strong>直到遇到ENDFOREACH指令,整个语句块才会得到真正的执行。
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">FOREACH(A RANGE <span style="color:rgb(249,145,87)">5</span> <span style="color:rgb(249,145,87)">15</span> <span style="color:rgb(249,145,87)">3</span>)
+    MESSAGE(<span style="color:rgb(255,204,102)">${A}</span>)
+ENDFOREACH(A)
+输出：
+<span style="color:rgb(249,145,87)">5</span><span style="color:rgb(249,145,87)">8</span><span style="color:rgb(249,145,87)">11</span><span style="color:rgb(249,145,87)">14</span></code></pre>
+</li></ol>
+</li></ul>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何生成动态库和静态库" name="cmake中如何生成动态库和静态库" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何生成动态库和静态库</h4>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:0px; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+参考ADD_LIBRARY和SET_TARGET_PROPERTIES用法<br style="clear:both">
+t3示例</p>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何使用动态库和静态库（查找库的路径）" name="cmake中如何使用动态库和静态库（查找库的路径）" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何使用动态库和静态库（查找库的路径）</h4>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:0px; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+参考INCLUDE_DIRECTORIES, LINK_DIRECTORIES, TARGET_LINK_LIBRARIES用法<br style="clear:both">
+t4示例使用动态库或静态库<br style="clear:both">
+t5示例如何使用cmake预定义的cmake模块(以FindCURL.cmake为例演示)<br style="clear:both">
+t6示例如何使用自定义的cmake模块(编写了自定义的FindHELLO.cmake)<br style="clear:both">
+<strong>注意</strong>读t5和t6的CMakeLists.txt和FindHELLO.cmake中的注释部分</p>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何指定生成文件的输出路径" name="cmake中如何指定生成文件的输出路径" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何指定生成文件的输出路径</h4>
+<ul style="font-family:微软雅黑; orphans:2; widows:2; font-size:15px">
+<li style="line-height:1.4em">如上ADD_SUBDIRECTORY的时候指定目标二进制文件输出路径（推荐使用下面这种）</li><li style="line-height:1.4em">使用SET命令重新定义EXECUTABLE_OUTPUT_PATH和LIBRARY_OUTPUT_PATH变量来指定最终的二进制文件的位置
+<pre style="word-break:break-all; word-wrap:break-word; overflow:auto"><code style="display:block; overflow-x:auto; padding:0.5em; background-color:rgb(71,73,73); color:rgb(209,217,225); word-break:break-all; word-wrap:break-word; border:1px solid rgb(204,204,204); margin:0px; font-size:0.9em; font-family:Consolas,Inconsolata,Courier,monospace">SET(EXECUTABLE_OUTPUT_PATH <span style="color:rgb(255,204,102)">${PROJECT_BINARY_DIR}</span>/bin)
+SET(LIBRARY_OUTPUT_PATH <span style="color:rgb(255,204,102)">${PROJECT_BINARY_DIR}</span>/lib)
+</code></pre>
+上面的两条命令通常紧跟ADD_EXECUTABLE和ADD_LIBRARY,与其写在同一个CMakeLists.txt即可</li></ul>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何增加编译选项" name="cmake中如何增加编译选项" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何增加编译选项</h4>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:0px; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+使用变量CMAKE_C_FLAGS添加C编译选项<br style="clear:both">
+使用变量CMAKE_CXX_FLAGS添加C&#43;&#43;编译选项<br style="clear:both">
+使用ADD_DEFINITION添加</p>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何增加头文件路径" name="cmake中如何增加头文件路径" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何增加头文件路径</h4>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:0px; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+参考INCLUDE_DIRECTORIES命令用法</p>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何在屏幕上打印信息" name="cmake中如何在屏幕上打印信息" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何在屏幕上打印信息</h4>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:0px; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+参考MESSAGE用法</p>
+<h4 style="font-family:微软雅黑; orphans:2; widows:2; clear:both; font-size:1.4em; margin:0.99em 0px 0.66em">
+<a target="_blank" target="_blank" href="file:///#cmake中如何给变量赋&#20540;" name="cmake中如何给变量赋&#20540;" style="text-decoration:none; vertical-align:baseline; color:rgb(50,105,160)"></a>cmake中如何给变量赋&#20540;</h4>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:0px; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+参考SET和AUX_SOURCE_DIRECTORY用法</p>
+<p style="font-family:微软雅黑; orphans:2; widows:2; margin-top:1em; margin-bottom:1em; word-wrap:break-word; font-size:15px">
+<strong>建议</strong>：在Project根目录先建立build,然后在build文件夹内运行cmake ..，这样就不会污染源代码, 如果不想要这些自动生成的文件了，只要简单的删除build文件夹就可以</p>
+</div>
+<br>
+<p></p>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.14-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="40963457" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>6</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/wzzfeitian/article/details/39449403';">上一篇</span><a href="/wzzfeitian/article/details/39449403" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Effective STL: 不同容器删除元素的方法</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/wzzfeitian/article/details/40985549';">下一篇</span><a href="/wzzfeitian/article/details/40985549" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Linux下各种查找命令（find, grep, which, whereis, locate）</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('1195096','wzzfeitian','foot','40963457');">Linux<em>（25）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('1195096', 'wzzfeitian','foot','40963457');
+        });
+    </script>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/wzzfeitian/svc/GetSuggestContent/40963457",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="http://static.blog.csdn.net/css/replace.css"/>
+<div id="relate" data-mod="popu_218"  class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "40963457",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'cmake使用示例与整理总结' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+    <div id="ad_cen">        
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="71" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '40963457';
+    var commentscount = 1;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/wzzfeitian/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>      
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/wzzfeitian" target="_blank">
+    <img src="http://avatar.csdn.net/0/8/E/1_wzzfeitian.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/wzzfeitian" class="user_name" target="_blank">wzzfeitian</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=wzzfeitian','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                         <div class="ico_expert" title="CSDN博客准专家"  onclick="javascript:location='http://blog.csdn.net/experts/rule.html'" style=" cursor:pointer;width:54px;height:60px;background:url('http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhunzhuanjiamiddle.png') no-repeat" ></div>
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/zhuanlandaren.png" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="3" >
+                                            </a>
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="1" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>338809次</span></li>
+    <li>积分：<span>3647</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：3647 </div>
+        </span>  </li>
+    <li>排名：<span>第5673名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>64篇</span></li>
+    <li>转载：<span>4篇</span></li>
+    <li>译文：<span>1篇</span></li>
+    <li>评论：<span>64条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/redis-note.html" target="_blank"><img src="http://img.blog.csdn.net/20151123180135520" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/redis-note.html" target="_blank">redis学习笔记</a>
+    <p>文章：14篇</p>
+    <span>阅读：45853</span>
+    </td>
+    </tr></table>
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/effectivestl.html" target="_blank"><img src="http://img.blog.csdn.net/20151123180015927" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/effectivestl.html" target="_blank">STL精粹</a>
+    <p>文章：5篇</p>
+    <span>阅读：5206</span>
+    </td>
+    </tr></table>
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/lua-programming.html" target="_blank"><img src="http://img.blog.csdn.net/20151123175402192" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/lua-programming.html" target="_blank">Lua入门与进阶</a>
+    <p>文章：14篇</p>
+    <span>阅读：140420</span>
+    </td>
+    </tr></table>
+    </ul>
+</div><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/wzzfeitian/article/category/1195096" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(26)</span>
+                </li>
+                 <li>
+                    <a href="/wzzfeitian/article/category/2563927" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C++</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/wzzfeitian/article/category/1238143" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MySQL</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/wzzfeitian/article/category/1300102" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Lua</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/wzzfeitian/article/category/2563967" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Redis</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/wzzfeitian/article/category/5947027" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">杂七杂八</a><span>(1)</span>
+                </li>
+</ul>
+</div><div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/wzzfeitian/article/details/8842371" title="正则表达式 进阶（一）-- 匹配多连续字符、位置匹配、子表达式使用">正则表达式 进阶（一）-- 匹配多连续字符、位置匹配、子表达式使用</a><span>(30630)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8292130" title="Lua基础 类型和值（一）">Lua基础 类型和值（一）</a><span>(26129)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8653101" title="Lua基础 函数（一）">Lua基础 函数（一）</a><span>(25739)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/40963457" title="cmake使用示例与整理总结">cmake使用示例与整理总结</a><span>(25092)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8641641" title="Lua基础 语句">Lua基础 语句</a><span>(20116)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8832017" title="Lua基础 coroutine  —— Lua的多线程编程">Lua基础 coroutine  —— Lua的多线程编程</a><span>(15457)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/42081969" title="Redis数据备份与恢复">Redis数据备份与恢复</a><span>(13477)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/7825225" title="linux下C编程--利用statfs函数查看磁盘空间">linux下C编程--利用statfs函数查看磁盘空间</a><span>(11230)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8789443" title="Lua基础 编译、运行、错误处理">Lua基础 编译、运行、错误处理</a><span>(9651)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8866390" title="Lua基础 安装LuaSocket">Lua基础 安装LuaSocket</a><span>(8872)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/wzzfeitian/article/details/42081969" title="Redis数据备份与恢复">Redis数据备份与恢复</a><span>(9)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8832017" title="Lua基础 coroutine  —— Lua的多线程编程">Lua基础 coroutine  —— Lua的多线程编程</a><span>(7)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8292130" title="Lua基础 类型和值（一）">Lua基础 类型和值（一）</a><span>(5)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8641641" title="Lua基础 语句">Lua基础 语句</a><span>(5)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8349441" title="Lua基础 类型和值（二）">Lua基础 类型和值（二）</a><span>(4)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/8734432" title="EVERNOTE 2732问题解决办法">EVERNOTE 2732问题解决办法</a><span>(3)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/7825225" title="linux下C编程--利用statfs函数查看磁盘空间">linux下C编程--利用statfs函数查看磁盘空间</a><span>(3)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/42078027" title="Redis事务">Redis事务</a><span>(3)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/7993686" title="sqlite之我见--C/C++ API接口示例">sqlite之我见--C/C++ API接口示例</a><span>(3)</span>
+</li>
+<li>
+<a href="/wzzfeitian/article/details/7797955" title="SourceInsight标题栏显示完整路径文件的方法">SourceInsight标题栏显示完整路径文件的方法</a><span>(2)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/woshimalingyi/article/details/51476559" 
+target="_blank">*基于AOP的非侵入式监控之——AspectJ实战</a></li>
+<li><a href="http://blog.csdn.net/yanghua_kobe/article/details/51503885" 
+target="_blank">* Apache Flink fault tolerance源码剖析(一)</a></li>
+<li><a href="http://blog.csdn.net/lw_ghy/article/details/51420027" 
+
+target="_blank">*spark性能调优：开发调优</a></li>
+<li><a 
+
+href="http://blog.csdn.net/hanhailong726188/article/details/50687466"target="_blank">*Rebound-Android的弹簧动画库</a></li>
+<li><a href="http://blog.csdn.net/gj19890923/article/details/51333899" 
+target="_blank">*neutron-server的启动流程(一)</a></li>
+<li><a href="http://blog.csdn.net/u010143774/article/details/51460947" target="_blank">*Hadoop中Map端shuffle源码解析</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42081999#comments">Redis安全</a>
+    <p style="margin:0px;"><a href="/ysl_228" class="user_name">ysl_228</a>:
+非常不错，支持
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42081969#comments">Redis数据备份与恢复</a>
+    <p style="margin:0px;"><a href="/r1soft" class="user_name">r1soft</a>:
+写的很好    谢谢！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42081969#comments">Redis数据备份与恢复</a>
+    <p style="margin:0px;"><a href="/w5065910" class="user_name">w5065910</a>:
+感谢楼主分享
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42081969#comments">Redis数据备份与恢复</a>
+    <p style="margin:0px;"><a href="/JackieLiuLixi" class="user_name">JackieLiuLixi</a>:
+很不错通俗易懂
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42078027#comments">Redis事务</a>
+    <p style="margin:0px;"><a href="/renzhengzhi" class="user_name">renzhengzhi</a>:
+@linyinpeng1989:http://doc.redisfans.com/string/in...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42078027#comments">Redis数据备份与恢复</a>
+    <p style="margin:0px;"><a href="/qq_29443961" class="user_name">qq_29443961</a>:
+@u013247169:小淫荡 ，你好？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/42078027#comments">Redis数据备份与恢复</a>
+    <p style="margin:0px;"><a href="/qq_29443961" class="user_name">qq_29443961</a>:
+路过。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/8832017#comments">Lua基础 coroutine  —— Lua的多线程编程</a>
+    <p style="margin:0px;"><a href="/evameng8510" class="user_name">evameng8510</a>:
+博主，太牛了，佩服的五体投地啊，可否加下微信聊啊，我的微信18694980521
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/8832017#comments">Redis安全</a>
+    <p style="margin:0px;"><a href="/qiushi888" class="user_name">qiushi888</a>:
+翻译的不错
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wzzfeitian/article/details/8832017#comments">Redis数据备份与恢复</a>
+    <p style="margin:0px;"><a href="/wzzfeitian" class="user_name">wzzfeitian</a>:
+@u013247169:全都是到处抄的, 不好意思
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=964321"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+</body>
+</html>   
+ 

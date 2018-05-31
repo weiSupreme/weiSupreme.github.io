@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh-cn"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>git 命令常用总结 - NewPanderKing - 博客园</title>
+<link type="text/css" rel="stylesheet" href="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/style2.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/newpanderking/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/newpanderking/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/newpanderking/wlwmanifest.xml">
+<script src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/encoder.js" type="text/javascript"></script><script src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'newpanderking', cb_enable_mathjax=false;</script>
+<script src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<script type="text/javascript">
+	try {
+		if (screen.availWidth > 1200) {
+			document.getElementById("MainCss").href = '/Skins/BOOK/style2.css';
+		}
+	} catch (e) { }
+</script>
+
+<div id="header">
+<div id="HeaderTitle">
+<div id="Title">
+<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/newpanderking/">NewPanderKing</a>
+</div>
+<div id="subTitle">抬头是山，路在脚下！</div>
+</div>
+</div>
+
+<div id="main">
+	
+<div id="post_detail">
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/newpanderking/p/4005698.html">git 命令常用总结</a>
+		</h2>
+		<div id="cnblogs_post_body"><address>详细git教程可参考：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></address>
+<h2>基础命令</h2>
+<p>用户设置</p>
+<div class="cnblogs_code">
+<pre>$ git config --<span style="color: #0000ff;">global</span> user.name <span style="color: #800000;">"</span><span style="color: #800000;">Your Name</span><span style="color: #800000;">"</span><span style="color: #000000;">
+$ git config </span>--<span style="color: #0000ff;">global</span> user.email <span style="color: #800000;">"</span><span style="color: #800000;">email@example.com</span><span style="color: #800000;">"</span></pre>
+</div>
+<p>初始化仓库</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">$ git init
+Initialized empty Git repository </span><span style="color: #0000ff;">in</span> /Users/learngit/.git/</pre>
+</div>
+<p>把文件添加到仓库</p>
+<div class="cnblogs_code">
+<pre>git add filename</pre>
+</div>
+<p>把文件提交到仓库</p>
+<div class="cnblogs_code">
+<pre>git commit -m <span style="color: #800000;">"</span><span style="color: #800000;">comment message</span><span style="color: #800000;">"</span></pre>
+</div>
+<p>初始化一个Git仓库，使用git init命令。</p>
+<p>添加文件到Git仓库，分两步：</p>
+<ul>
+<li>
+<p>第一步，使用命令git add&nbsp;，注意，可反复多次使用，添加多个文件；</p>
+</li>
+<li>
+<p>第二步，使用命令git commit，完成。</p>
+</li>
+</ul>
+<p>运行<em>git status</em>命令看看结果</p>
+<div class="cnblogs_code">
+<pre>git status</pre>
+</div>
+<p>但如果能看看具体修改了什么内容</p>
+<div class="cnblogs_code">
+<pre>git diff filename</pre>
+</div>
+<ul>
+<li>
+<p>要随时掌握工作区的状态，使用git status命令。</p>
+</li>
+<li>
+<p>如果git status告诉你有文件被修改过，用git diff可以查看修改内容</p>
+</li>
+</ul>
+<p>版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用git log命令查看</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">git log
+
+git log </span>--pretty=oneline</pre>
+</div>
+<p>首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交,上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100.</p>
+<div class="cnblogs_code">
+<pre>git reset --hard HEAD^<span style="color: #000000;">
+
+git reset </span>--hard <span style="color: #800080;">3628164</span></pre>
+</div>
+<p>Git提供了一个命令<em>git reflog</em>用来查看历史</p>
+<div class="cnblogs_code">
+<pre>git reflog</pre>
+</div>
+<ul>
+<li>
+<p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<em>git reset --hard commit_id</em>。</p>
+</li>
+<li>
+<p>穿梭前，用<em>git log</em>可以查看提交历史，以便确定要回退到哪个版本。</p>
+</li>
+<li>
+<p>要重返未来，用<em>git reflog</em>查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ul>
+<p><strong>工作区</strong>（Working Directory）：就是你在电脑里能看到的目录，比如我的learngit文件夹就是一个工作区。</p>
+<p><strong>版本库</strong>（Repository）：工作区有一个隐藏目录“.git”，这个不算工作区，而是Git的版本库。</p>
+<p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
+<p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
+<p>第一步是用“git add”把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+<p>第二步是用“git commit”提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+<p>&nbsp;</p>
+<p><em>git checkout -- file</em>可以丢弃工作区的修改</p>
+<div class="cnblogs_code">
+<pre>git checkout -- filename</pre>
+</div>
+<p><em>git checkout -- file</em>命令中的“--”很重要，没有“--”，就变成了“创建一个新分支”的命令.</p>
+<p>&nbsp;</p>
+<p>用命令<em>git reset HEAD file</em>可以把暂存区的修改撤销掉（unstage），重新放回工作区</p>
+<div class="cnblogs_code">
+<pre>git reset HEAD  filename</pre>
+</div>
+<p><em>git reset</em>命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。</p>
+<p>&nbsp;</p>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<em>git checkout -- file</em>。</p>
+<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<em>git reset HEAD file</em>，就回到了场景1，第二步按场景1操作。</p>
+<p>&nbsp;</p>
+<p>确实要从版本库中删除该文件，那就用命令<em>git rm</em>删掉，并且commit</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">git rm test.txt
+
+git commit </span>-m <span style="color: #800000;">"</span><span style="color: #800000;">remove test.txt</span><span style="color: #800000;">"</span></pre>
+</div>
+<p>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本</p>
+<div class="cnblogs_code">
+<pre>git checkout -- test.txt</pre>
+</div>
+<p><em>git checkout</em>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
+<p>命令<em>git rm</em>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失<strong>最近一次提交后你修改的内容</strong>。</p>
+<p>&nbsp;</p>
+<h2>远程仓库</h2>
+<p>要关联一个远程库，使用命令<em>git remote add origin git@server-name:path/repo-name.git</em>；</p>
+<p>关联后，使用命令<em>git push -u origin master</em>第一次推送master分支的所有内容；</p>
+<p>此后，每次本地提交后，只要有必要，就可以使用命令<em>git push origin master</em>推送最新修改；</p>
+<p>&nbsp;</p>
+<p>用命令<em>git clone</em>克隆一个本地库</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">Git本身的源代码你既可以用 git:</span><span style="color: #008000;">//</span><span style="color: #008000;"> 协议来访问：</span>
+git clone  git:<span style="color: #008000;">//</span><span style="color: #008000;">git.kernel.org/pub/scm/git/git.git
+</span><span style="color: #008000;">//</span><span style="color: #008000;">也可以通过http 协议来访问:</span>
+git clone http:<span style="color: #008000;">//</span><span style="color: #008000;">www.kernel.org/pub/scm/git/git.git</span></pre>
+</div>
+<h2>git 分支</h2>
+<p>查看分支：git branch</p>
+<p>创建分支：git branch&nbsp;<em>name</em></p>
+<p>切换分支：git checkout&nbsp;<em>name</em></p>
+<p>创建+切换分支：git checkout -b&nbsp;<em>name</em></p>
+<p>合并某分支到当前分支：git merge&nbsp;<em>name</em></p>
+<p>删除分支：git branch -d&nbsp;<em>name</em></p>
+<p>&nbsp;</p>
+<p>在 当前分支下，要把dev分支的内容合并</p>
+<div class="cnblogs_code">
+<pre>git merge dev</pre>
+</div>
+<p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
+<p>用<em>git log --graph</em>命令可以看到分支合并图。</p>
+<p>&nbsp;</p>
+<p>在实际开发中，我们应该按照几个基本原则进行分支管理：</p>
+<p>首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
+<p>那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；</p>
+<p>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。</p>
+<p>&nbsp;</p>
+<p>Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
+<div class="cnblogs_code">
+<pre>git stash</pre>
+</div>
+<p>现在，用<em>git status</em>查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。</p>
+<p>首先确定要在哪个分支上修复bug，假定需要在master分支上修复，就从master创建临时分支：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">转换到master分支</span>
+<span style="color: #000000;">git checkout master
+</span><span style="color: #008000;">//</span><span style="color: #008000;">创建并转换到的名字为 issue-101 的分支</span>
+git checkout -b issue-<span style="color: #800080;">101</span></pre>
+</div>
+<p>&nbsp;</p>
+<p>查看存储的工作 用git stash list</p>
+<div class="cnblogs_code">
+<pre>git stash list</pre>
+</div>
+<p>工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：</p>
+<p>一是用<em>git stash apply</em>恢复，但是恢复后，stash内容并不删除，你需要用<em>git stash drop</em>来删除；</p>
+<p>另一种方式是用<em>git stash pop</em>，恢复的同时把stash内容也删了：</p>
+<p>&nbsp;</p>
+<p>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；</p>
+<p>当手头工作没有完成时，先把工作现场<em>git stash</em>一下，然后去修复bug，修复后，再<em>git stash pop</em>，回到工作现场.</p>
+<p>&nbsp;</p>
+<p>如果要丢弃一个没有被合并过的分支，可以通过<em>git branch -D name</em>强行删除。</p>
+<p>&nbsp;</p>
+<p>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。</p>
+<p>要查看远程库的信息，用<em>git remote</em>或者用git remote -v显示更详细的信息：</p>
+<div class="cnblogs_code">
+<pre>git remote<br><br>git remote -v</pre>
+</div>
+<h2>推送分支</h2>
+<p>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上.</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">git push origin master
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">如果要推送其他分支，比如dev，就改成</span><span style="color: #000000;">
+git push origin dev</span></pre>
+</div>
+<p>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？</p>
+<ul>
+<li>
+<p>master分支是主分支，因此要时刻与远程同步；</p>
+</li>
+<li>
+<p>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</p>
+</li>
+<li>
+<p>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</p>
+</li>
+<li>
+<p>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
+</li>
+</ul>
+<p>总之，就是在Git中，分支完全可以在本地自己藏着玩，是否推送，视你的心情而定！</p>
+<p>&nbsp;</p>
+<h2>抓取分支</h2>
+<p>多人协作时，大家都会往master和dev分支上推送各自的修改。</p>
+<p>现在，模拟一个你的小伙伴，可以在另一台电脑（注意要把SSH Key添加到GitHub）或者同一台电脑的另一个目录下克隆：</p>
+<div class="cnblogs_code">
+<pre>git clone git://git.kernel.org/pub/scm/git/git.git</pre>
+</div>
+<p>指定本地dev分支与远程origin/dev分支的链接</p>
+<div class="cnblogs_code">
+<pre>git branch --<span style="color: #0000ff;">set</span>-upstream dev origin/<span style="color: #000000;">dev
+
+git pull</span></pre>
+</div>
+<p>因此，多人协作的工作模式通常是这样：</p>
+<ol>
+<li>
+<p>首先，可以试图用<em>git push origin branch-name</em>推送自己的修改；</p>
+</li>
+<li>
+<p>如果推送失败，则因为远程分支比你的本地更新，需要先用<em>git pull</em>试图合并；</p>
+</li>
+<li>
+<p>如果合并有冲突，则解决冲突，并在本地提交；</p>
+</li>
+<li>
+<p>没有冲突或者解决掉冲突后，再用<em>git push origin branch-name</em>推送就能成功！</p>
+</li>
+</ol>
+<p>如果<em>git pull</em>提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令<em>git branch --set-upstream branch-name origin/branch-name</em>。</p>
+<p>这就是多人协作的工作模式，一旦熟悉了，就非常简单。</p>
+<p>&nbsp;</p>
+<ul>
+<li>
+<p>查看远程库信息，使用<em>git remote -v</em>；</p>
+</li>
+<li>
+<p>本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
+</li>
+<li>
+<p>从本地推送分支，使用<em>git push origin branch-name</em>，如果推送失败，先用<em>git pull</em>抓取远程的新提交；</p>
+</li>
+<li>
+<p>在本地创建和远程分支对应的分支，使用<em>git checkout -b branch-name origin/branch-name</em>，本地和远程分支的名称最好一致；</p>
+</li>
+<li>
+<p>建立本地分支和远程分支的关联，使用<em>git branch --set-upstream branch-name origin/branch-name</em>；</p>
+</li>
+<li>
+<p>从远程抓取分支，使用<em>git pull</em>，如果有冲突，要先处理冲突。</p>
+</li>
+</ul>
+<h2>&nbsp;tag 标签</h2>
+<p>命令<em>git tag name</em>就可以打一个新标签，可以用命令<em>git tag</em>查看所有标签</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">新建标签</span>
+git tag v1.<span style="color: #800080;">0</span>
+
+<span style="color: #008000;">//</span><span style="color: #008000;">给commit id 为25656e2的历史版本打标签</span>
+git tag v1.<span style="color: #800080;">0</span><span style="color: #000000;">  25656e2
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">查看标签</span>
+git tag</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<p>用<em>git show tagname</em>查看标签信息</p>
+<div class="cnblogs_code">
+<pre>git show v1.<span style="color: #800080;">0</span></pre>
+</div>
+<ul>
+<li>
+<p>命令<em>git tag name</em>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</p>
+</li>
+<li>
+<p>-a tagname -m "blablabla..."可以指定标签信息；</p>
+</li>
+<li>
+<p>-s tagname -m "blablabla..."可以用PGP签名标签；</p>
+</li>
+<li>
+<p>命令<em>git tag</em>可以查看所有标签；</p>
+</li>
+</ul>
+<p>推送某个标签到远程，使用命令git push origin tagname，或者，一次性推送全部尚未推送到远程的本地标签</p>
+<div class="cnblogs_code">
+<pre>git push origin v1.<span style="color: #800080;">0</span><span style="color: #000000;">
+
+
+git push origin </span>--tags</pre>
+</div>
+<p>删除标签</p>
+<p>分两步，1、删除本地；2、删除远程。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">删除本地</span>
+git tag -d v0.<span style="color: #800080;">9</span>
+<span style="color: #008000;">//</span><span style="color: #008000;">删除远程</span>
+git push origin :refs/tags/v0.<span style="color: #800080;">9</span></pre>
+</div>
+<ul>
+<li>
+<p>命令<em>git push origin tagname</em>可以推送一个本地标签；</p>
+</li>
+<li>
+<p>命令<em>git push origin --tags</em>可以推送全部未推送过的本地标签；</p>
+</li>
+<li>
+<p>命令<em>git tag -d tagname</em>可以删除一个本地标签；</p>
+</li>
+<li>
+<p>命令<em>git push origin :refs/tags/tagname</em>可以删除一个远程标签。</p>
+</li>
+</ul>
+<p><strong>ignore 文件</strong></p>
+<p>不需要从头写<em>.gitignore</em>文件，GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。所有配置文件可以直接在线浏览：<a href="https://github.com/github/gitignore" target="_blank">https://github.com/github/gitignore</a></p>
+<p>忽略文件的原则是：</p>
+<ol>
+<li>忽略操作系统自动生成的文件，比如缩略图等；</li>
+<li>忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的<em>.class</em>文件；</li>
+<li>忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。</li>
+</ol>
+<p><strong>配置别名</strong></p>
+<p>如果敲<em>git st</em>就表示<em>git status</em></p>
+<div class="cnblogs_code">
+<pre>git config --<span style="color: #0000ff;">global</span><span style="color: #000000;"> alias.st status
+git config </span>--<span style="color: #0000ff;">global</span><span style="color: #000000;"> alias.co checkout
+git config </span>--<span style="color: #0000ff;">global</span><span style="color: #000000;"> alias.ci commit 
+git config </span>--<span style="color: #0000ff;">global</span> alias.br branch</pre>
+</div>
+<div class="cnblogs_code">
+<pre>git config --<span style="color: #0000ff;">global</span> alias.unstage <span style="color: #800000;">'</span><span style="color: #800000;">reset HEAD</span><span style="color: #800000;">'</span></pre>
+</div>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/newpanderking/category/312952.html">工具</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(4005698,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/NewPanderKing" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/newpanderking/" target="_blank"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/20140812083355.jpeg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/newpanderking/">NewPanderKing</a><br>
+<a href="http://home.cnblogs.com/u/newpanderking/followees">关注 - 18</a><br>
+<a href="http://home.cnblogs.com/u/newpanderking/followers">粉丝 - 93</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(4005698,'Digg')">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+	<div class="buryit" onclick="votePost(4005698,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/newpanderking/p/4003228.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/newpanderking/p/4003228.html" title="发布于2014-10-01 13:40">LNK1123: 转换到 COFF 期间失败: 文件无效或损坏</a><br><a href="http://www.cnblogs.com/newpanderking/p/4114733.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/newpanderking/p/4114733.html" title="发布于2014-11-22 09:32">多进程vs多线程</a><br></div>
+</div>
+
+
+		<p class="postfoot">
+			posted on <span id="post-date">2014-10-05 09:17</span> <a href="http://www.cnblogs.com/newpanderking/">NewPanderKing</a> 阅读(<span id="post_view_count">12118</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=4005698" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4005698);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=91178,cb_entryId=4005698,cb_blogApp=currentBlogApp,cb_blogUserGuid='c2b16ae8-d63f-e011-ac81-842b2b196315',cb_entryCreatedDate='2014/10/5 9:17:00';loadViewCount(cb_entryId);</script>
+	
+	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.rongcloud.cn/" target="_blank">【推荐】融云即时通讯云－豆果美食、Faceu等亿级APP都在用</a><br><a href="http://www.gcpowertools.com.cn/products/activereports/excel.htm?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=AR&amp;utm_campaign=community" target="_blank">【推荐】Excel 报表开发18 招式，人人都能做报表</a><br><a href="http://group.cnblogs.com/topic/74539.html" target="_blank">【推荐】阿里云万网域名：.xin .com将推出重磅优惠</a><br><a href="http://t.cn/RqDmMiB" target="_blank">【活动】开发交流会：当轻架构前端撞上高性能大数据后台</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="https://www.wilddog.com/?utm_source=cnblogs&amp;utm_medium=banner&amp;utm_campaign=orangemarch" target="_blank"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/cnblogs-300x250-1.jpg" alt="" height="250" width="300"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/545834/" target="_blank">谷歌ATAP团队和知名动画导演推出互动全景VR动画短片</a><br> ·  <a href="http://news.cnblogs.com/n/545833/" target="_blank">为《守望先锋》发售造势 暴雪展出游戏人物巨型模型</a><br> ·  <a href="http://news.cnblogs.com/n/545832/" target="_blank">网友用漫画演示Windows 10免费升级的“真实面目”</a><br> ·  <a href="http://news.cnblogs.com/n/545831/" target="_blank">语音控制不够酷，谷歌推出隔空手势操作技术</a><br> ·  <a href="http://news.cnblogs.com/n/545829/" target="_blank">NASA探测器发现地球周围存在高能质子环</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="ad_c2" class="c_ad_block"><a href="https://www.jpush.cn/?from=cnblogs01" target="_blank"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20160307140747632-1210035054.jpg" alt="" height="60" width="468"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/543110/" target="_blank">架构漫谈（九）：理清技术、业务和架构的关系</a><br> ·  <a href="http://kb.cnblogs.com/page/542725/" target="_blank">架构漫谈（八）：从架构的角度看如何写好代码</a><br> ·  <a href="http://kb.cnblogs.com/page/542257/" target="_blank">架构漫谈（七）：不要空设架构师这个职位，给他实权</a><br> ·  <a href="http://kb.cnblogs.com/page/541740/" target="_blank">架构漫谈（六）：软件架构到底是要解决什么问题？</a><br> ·  <a href="http://kb.cnblogs.com/page/541188/" target="_blank">架构漫谈（五）：什么是软件</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"><b>历史上的今天:</b><br>2012-10-05 <a href="http://www.cnblogs.com/newpanderking/archive/2012/10/05/2712299.html">zoj 2406 Specialized Four-Digit Numbers</a><br>2012-10-05 <a href="http://www.cnblogs.com/newpanderking/archive/2012/10/05/2712264.html">zoj 2417 Lowest Bit(简单的模拟)</a><br>2012-10-05 <a href="http://www.cnblogs.com/newpanderking/archive/2012/10/05/2712239.html">zoj 2433 Highways(英语是硬伤啊)</a><br>2012-10-05 <a href="http://www.cnblogs.com/newpanderking/archive/2012/10/05/2712035.html">poj 1607 Deck（坑爹的水题啊）</a><br>2012-10-05 <a href="http://www.cnblogs.com/newpanderking/archive/2012/10/05/2711995.html">poj 1552 Doubles(简单的模拟一下)</a><br></div>
+<script type="text/javascript">
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+	
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © NewPanderKing
+</p>
+</div>
+<div id="rightmenu">
+	
+		<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2016/04/01');return false;">&lt;</a></td><td align="center">2016年5月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2016/06/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">24</td><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td></tr><tr><td class="CalWeekendDay" align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td class="CalWeekendDay" align="center">7</td></tr><tr><td class="CalWeekendDay" align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td class="CalWeekendDay" align="center">14</td></tr><tr><td class="CalWeekendDay" align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td class="CalWeekendDay" align="center">21</td></tr><tr><td class="CalTodayDay" align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td class="CalWeekendDay" align="center">28</td></tr><tr><td class="CalWeekendDay" align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>导航</h3>
+<ul>
+			<li><a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a></li>
+			<li><a id="MyLinks1_MyHomeLink" href="http://www.cnblogs.com/newpanderking/">首页</a></li>
+			<li><a id="MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+			<li><a id="MyLinks1_ContactLink" accesskey="9" rel="nofollow" href="http://msg.cnblogs.com/send/NewPanderKing">联系</a></li>
+			<li><a id="MyLinks1_Syndication" href="http://www.cnblogs.com/newpanderking/rss">订阅</a><a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/newpanderking/rss"><img src="git%20%E5%91%BD%E4%BB%A4%E5%B8%B8%E7%94%A8%E6%80%BB%E7%BB%93%20-%20NewPanderKing%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/xml.gif" alt="订阅"></a>
+			</li><li><a id="MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		
+<h3>统计</h3>
+	<ul>
+		<li>随笔 - 212
+		</li><li>文章 - 60
+		</li><li>评论 - 51
+		</li><li>引用 - 0
+	</li>
+</ul>
+		
+<h3>公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/newpanderking/">NewPanderKing</a><br>园龄：<a href="http://home.cnblogs.com/u/newpanderking/" title="入园时间：2011-02-24">5年2个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/newpanderking/followers/">93</a><br>关注：<a href="http://home.cnblogs.com/u/newpanderking/followees/">18</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('c2b16ae8-d63f-e011-ac81-842b2b196315')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+
+		<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/newpanderking/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/newpanderking/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/newpanderking/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/newpanderking/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/newpanderking/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/newpanderking/tag/3%E9%80%9A%E9%81%93/">3通道</a>(1)</li><li><a href="http://www.cnblogs.com/newpanderking/tag/4%E9%80%9A%E9%81%93/">4通道</a>(1)</li><li><a href="http://www.cnblogs.com/newpanderking/tag/opencv/">opencv</a>(1)</li><li><a href="http://www.cnblogs.com/newpanderking/tag/rgb/">rgb</a>(1)</li><li><a href="http://www.cnblogs.com/newpanderking/tag/%E5%9B%BE%E7%89%87%E9%80%8F%E6%98%8E/">图片透明</a>(1)</li>
+</ul>
+</div></div><div id="sidebar_categories">
+		<h3>随笔分类</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/newpanderking/category/383440.html">android(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/newpanderking/category/366201.html">c/c++(29)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/newpanderking/category/312940.html">java(7)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/newpanderking/category/326218.html">oj题目分类(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/newpanderking/category/311660.html">Online Judge(115)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/newpanderking/category/312952.html">工具(9)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/newpanderking/category/586434.html">面试题(31)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/newpanderking/category/381634.html">排序(7)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/newpanderking/category/678087.html">前端(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/newpanderking/category/311925.html">数学概念(9)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/newpanderking/category/317345.html">算法概念(5)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/newpanderking/category/586433.html">杂七杂八(7)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/newpanderking/archive/2015/12.html">2015年12月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/newpanderking/archive/2015/10.html">2015年10月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/newpanderking/archive/2015/04.html">2015年4月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/newpanderking/archive/2015/03.html">2015年3月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/newpanderking/archive/2015/01.html">2015年1月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/newpanderking/archive/2014/12.html">2014年12月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/newpanderking/archive/2014/11.html">2014年11月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/newpanderking/archive/2014/10.html">2014年10月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/newpanderking/archive/2014/09.html">2014年9月 (8)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/newpanderking/archive/2014/08.html">2014年8月 (10)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/newpanderking/archive/2014/07.html">2014年7月 (11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/newpanderking/archive/2014/06.html">2014年6月 (13)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/newpanderking/archive/2013/09.html">2013年9月 (3)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/newpanderking/archive/2013/08.html">2013年8月 (12)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/newpanderking/archive/2013/04.html">2013年4月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/newpanderking/archive/2013/03.html">2013年3月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/newpanderking/archive/2012/12.html">2012年12月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/newpanderking/archive/2012/11.html">2012年11月 (11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/newpanderking/archive/2012/10.html">2012年10月 (29)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/newpanderking/archive/2012/09.html">2012年9月 (11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/newpanderking/archive/2012/08.html">2012年8月 (5)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/newpanderking/archive/2012/05.html">2012年5月 (5)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/newpanderking/archive/2012/04.html">2012年4月 (5)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/newpanderking/archive/2012/03.html">2012年3月 (6)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/newpanderking/archive/2011/12.html">2011年12月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/newpanderking/archive/2011/10.html">2011年10月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/newpanderking/archive/2011/09.html">2011年9月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/newpanderking/archive/2011/08.html">2011年8月 (28)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/newpanderking/archive/2011/07.html">2011年7月 (31)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>文章分类</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/newpanderking/category/525038.html">c/c++(8)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_1" href="http://www.cnblogs.com/newpanderking/category/676318.html">ios(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_2" href="http://www.cnblogs.com/newpanderking/category/463434.html">itk-vtk(5)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_3" href="http://www.cnblogs.com/newpanderking/category/427807.html">javaweb(9)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_4" href="http://www.cnblogs.com/newpanderking/category/323357.html">Linux(10)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_5" href="http://www.cnblogs.com/newpanderking/category/581970.html">matlab(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_6" href="http://www.cnblogs.com/newpanderking/category/455731.html">opencv(10)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_7" href="http://www.cnblogs.com/newpanderking/category/323359.html">操作系统(3)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_8" href="http://www.cnblogs.com/newpanderking/category/311657.html">数据结构(8)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_9" href="http://www.cnblogs.com/newpanderking/category/323358.html">数据库</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_10" href="http://www.cnblogs.com/newpanderking/category/516922.html">网络(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_11" href="http://www.cnblogs.com/newpanderking/category/584925.html">杂七杂八(2)</a> </li>
+			
+				</ul>
+			
+	</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/newpanderking/articles/3372969.html#3427618">1. Re:vs2010  问题     &gt;LINK : fatal error LNK1123: 转换到 COFF 期间失败: 文件无效或损坏</a></li>
+        <li class="recent_comment_body">Just overwrite $VCDIR/bin/amd64/cvtres.exe in VS2010 dir with C:/Windows/Microsoft.NET/Framework64/v......</li>
+        <li class="recent_comment_author">--ahh</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/newpanderking/articles/4057977.html#3411137">2. Re:matlab 2012  vs2010混合编程</a></li>
+        <li class="recent_comment_body">博主求解：需要把被调用的chckxy.m生成dll文件吗，我实现时只添加了主函数生成的dll文件，不能正常运行啊。谢谢！</li>
+        <li class="recent_comment_author">--erica94</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/newpanderking/p/4366174.html#3399582">3. Re:一些技术大牛的博客集锦（转）</a></li>
+        <li class="recent_comment_body">总结得非常棒！若是能再多推荐一些java方面的优秀博客就更棒了。</li>
+        <li class="recent_comment_author">--电路格格</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/newpanderking/p/4887981.html#3383386">4. Re:IDE神器intellij idea的基本使用</a></li>
+        <li class="recent_comment_body">请问这种getter，setter 模板里面怎么获取属性上的注释呢？？？如下：/** *测试属性A*/private int a;生成如下代码： /** * 获取 测试......</li>
+        <li class="recent_comment_author">--Jerry.hu</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/newpanderking/articles/3372969.html#3376572">5. Re:vs2010  问题     &gt;LINK : fatal error LNK1123: 转换到 COFF 期间失败: 文件无效或损坏</a></li>
+        <li class="recent_comment_body">很好用</li>
+        <li class="recent_comment_author">--lphwork</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/newpanderking/archive/2012/05/26/2519150.html">1. android - ADT本地配置、sdk配置(21196)</a></li><li><a href="http://www.cnblogs.com/newpanderking/archive/2012/10/18/2729552.html">2. 拓扑排序(12683)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/4005698.html">3. git 命令常用总结(12118)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/4003228.html">4. LNK1123: 转换到 COFF 期间失败: 文件无效或损坏(11924)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/3972280.html">5. 百度2015校园招聘软件开发笔试题(11572)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/newpanderking/archive/2012/08/21/2649589.html">1. c和指针第六章第二题(4)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/4887981.html">2. IDE神器intellij idea的基本使用(4)</a></li><li><a href="http://www.cnblogs.com/newpanderking/archive/2012/10/14/2723260.html">3. hdu 1325 Is It A Tree?(并查集)(3)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/4366174.html">4. 一些技术大牛的博客集锦（转）(2)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/3875749.html">5. 数据库连接池的工作原理(2)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/newpanderking/archive/2011/08/25/2153777.html">1. 三分搜索法(5)</a></li><li><a href="http://www.cnblogs.com/newpanderking/archive/2011/07/25/2116323.html">2. 辗转相除法(4)</a></li><li><a href="http://www.cnblogs.com/newpanderking/archive/2012/10/18/2729552.html">3. 拓扑排序(4)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/4003228.html">4. LNK1123: 转换到 COFF 期间失败: 文件无效或损坏(4)</a></li><li><a href="http://www.cnblogs.com/newpanderking/p/3972280.html">5. 百度2015校园招聘软件开发笔试题(4)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+	
+</div>
+			
+			
+			
+			
+			 
+
+	
+
+
+
+</body></html>

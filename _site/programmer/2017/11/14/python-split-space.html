@@ -1,0 +1,16 @@
+<p> 对txt文档中每一行中的连续多个空格合并为一个空格，以下是代码：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>f = open('row_val.txt')
+nf = open('val.txt', 'w')
+done = 0
+while not done:
+	line = f.readline()
+	if line != '':
+		str = ' '.join(line.split())
+		nf.write(str+'\n')
+	else:
+		done = 1
+f.close()
+nf.close()
+</code></pre>
+</div>

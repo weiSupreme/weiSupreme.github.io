@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>最炫的民族风</title>
+		<description>zhuwei的个人网站！</description>
+		<link></link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>创建VOC2007格式数据集用于训练faster-rcnn</title>
+				<description>&lt;p&gt;  转载：&lt;a href=&quot;/assets/note/generate-voc2007-for-fasterRcnn.pdf&quot;&gt;创建自己的VOC2007格式的数据集&lt;/a&gt;
+  转载：&lt;a href=&quot;/assets/note/train-ownData-fasterRcnn.pdf&quot;&gt;用faster-rcnn训练自己的数据集&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&quot;/assets/note/object_labelImg-master.zip&quot;&gt;点这里下载用于制作标签的LabeilImage&lt;/a&gt;
+  &lt;a href=&quot;/assets/note/tools-for-generate-datastes.zip&quot;&gt;点这里下载用于制作xml文件的工具&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;问题解决：
+  1、修改faster-rcnn默认的图片格式和目标种类&lt;img src=&quot;/assets/note/faster-rcnn-jpg-class.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;  2、’module’ has no attribute ‘text_format’&lt;img src=&quot;/assets/note/faster-rcnn-protobuf-txt-format-error.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;  3、ValueError: total size of new array must be unchanged
+&lt;img src=&quot;/assets/note/faster-rcnn-data-odd.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+				<pubDate>Tue, 26 Dec 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/12/26/train-with-fasterRcnn.html</link>
+				<guid isPermaLink="true">/programmer/2017/12/26/train-with-fasterRcnn.html</guid>
+			</item>
+		
+			<item>
+				<title>实现opencv的背景分离例程</title>
+				<description>&lt;p&gt;  本代码参考了opencv官方教程，实现对视频（笔记本摄像头图像）的背景分离。代码基于python3.6,opencv3.3。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import numpy as np
+import cv2
+#cap = cv2.VideoCapture(&#39;Video_001.avi&#39;)
+cap = cv2.VideoCapture(0)  #读取摄像头
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))   图像增强（去噪）
+fgbg = cv2.createBackgroundSubtractorMOG2()   #mog2方法
+cv2.namedWindow(&quot;sourceImg&quot;)
+cv2.namedWindow(&quot;fgmask&quot;)
+count = 0
+for i in range(1, 1500):
+    #frame = cv2.imread(&quot;input/%d.png&quot; % (i))
+    ret, frame = cap.read()   #读取一帧图像
+    fgmask = fgbg.apply(frame) #背景分离
+    fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)
+    cv2.imshow(&#39;sourceImg&#39;, frame)
+    cv2.imshow(&#39;fgmask&#39;, fgmask)
+    #count = i % 10
+    #if not count:
+        #cv2.imwrite(&quot;output/%d.png&quot; % (i), fgmask)
+    k = cv2.waitKey(30) &amp;amp; 0xff
+    if k == 27:
+        break
+cap.release()
+cv2.destroyAllWindows()   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.opencv.org/3.3.0/db/d5c/tutorial_py_bg_subtraction.html&quot;&gt;opencv&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/12/03/subtractor-of-opencv.html</link>
+				<guid isPermaLink="true">/programmer/2017/12/03/subtractor-of-opencv.html</guid>
+			</item>
+		
+			<item>
+				<title>批量修改文件名</title>
+				<description>&lt;h3 id=&quot;section&quot;&gt;说明&lt;/h3&gt;
+&lt;p&gt;  本代码适合用来批量修改文件名，可以命名全新的名字，也可以在旧文件名上修改，根据自己的需要对代码做适量改动。注意：此种方法读取的文件不是按文件名的排列顺序的，会有乱序的情况，所以如果要对顺序排列好的文件进行顺序命名，读取文件的时候需要一定的判断。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;代码&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import os
+src_dir = r&quot;period14_camera1_fgimproved&quot;   #源文件夹
+name_trip = &#39;_improved&#39;       #文件名要除去的部分：camera1_20080409T183943+02_frame1_name_trip
+new_name_att = &#39;improved.png&#39;    #新的名称：camera1_20080409T183943+02_frame1_new_name_att
+src_paths = [os.path.join(src_dir, f) for f in os.listdir(src_dir)]
+for src_path in src_paths:
+    print(src_path)
+    src_filename = os.path.basename(src_path)
+    src_filename_no_ext = os.path.splitext(src_filename)[0] #去掉了扩展名的文件名
+    src_filename_no_ext = src_filename_no_ext.rstrip(name_trip) #rstrip去掉右边的，lstrip去掉左边的
+    print(src_filename_no_ext)
+    src_new_name = src_filename_no_ext + new_name_att
+    print(src_new_name)
+    os.rename(src_path,os.path.join(src_dir,src_new_name))   #重命名
+print(&#39;ok&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+				<pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/12/03/change-files-name.html</link>
+				<guid isPermaLink="true">/programmer/2017/12/03/change-files-name.html</guid>
+			</item>
+		
+			<item>
+				<title>给文件夹里的图片创建用于caffe的文件列表</title>
+				<description>&lt;p&gt;  caffe创建自己的数据集时，首先要生成训练和验证用的图片文件名和对应标签的txt文件，train.txt和val.txt,如：52306.jpg 2。下面这个代码就是用于创建这个文件的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env sh&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;path/to/imagenet/2
+&lt;span class=&quot;nv&quot;&gt;MY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;data/my_data/2
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Create train.txt...&quot;&lt;/span&gt;
+rm -rf &lt;span class=&quot;nv&quot;&gt;$MY&lt;/span&gt;/train.txt
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;i &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;3 4 5 6 7 
+&lt;span class=&quot;k&quot;&gt;do
+&lt;/span&gt;find &lt;span class=&quot;nv&quot;&gt;$DATA&lt;/span&gt;/train/ -name &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.jpg | cut -d &lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt; -f 6 | sed &lt;span class=&quot;s2&quot;&gt;&quot;s/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&quot;&lt;/span&gt;&amp;gt;&amp;gt;&lt;span class=&quot;nv&quot;&gt;$MY&lt;/span&gt;/train.txt
+&lt;span class=&quot;k&quot;&gt;done
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Create val.txt...&quot;&lt;/span&gt;
+rm -rf &lt;span class=&quot;nv&quot;&gt;$MY&lt;/span&gt;/val.txt
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;i &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;3 4 5 6 7
+&lt;span class=&quot;k&quot;&gt;do
+&lt;/span&gt;find &lt;span class=&quot;nv&quot;&gt;$DATA&lt;/span&gt;/test/ -name &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.jpg | cut -d &lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt; -f 6 | sed &lt;span class=&quot;s2&quot;&gt;&quot;s/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&quot;&lt;/span&gt;&amp;gt;&amp;gt;&lt;span class=&quot;nv&quot;&gt;$MY&lt;/span&gt;/val.txt
+&lt;span class=&quot;k&quot;&gt;done
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;All done&quot;&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;  其中两点需要说明一下，1、：cut -d ‘/’ -f 6，这个命令中，-d表示分隔符，-f表示选取哪个字段，因为find得到的是包含路径的文件名，而我们只需要文件名，所以需要选取特定字段。在我参考的blog中，是 -f4-5，这个是不对的。2、for循环中的3 4 5 6 7表示标签。&lt;a href=&quot;http://http://www.cnblogs.com/denny402/p/5083300.html&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Wed, 15 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/11/15/create-file-list.html</link>
+				<guid isPermaLink="true">/programmer/2017/11/15/create-file-list.html</guid>
+			</item>
+		
+			<item>
+				<title>python合并Txt中的空格</title>
+				<description>&lt;p&gt; 对txt文档中每一行中的连续多个空格合并为一个空格，以下是代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;f = open(&#39;row_val.txt&#39;)
+nf = open(&#39;val.txt&#39;, &#39;w&#39;)
+done = 0
+while not done:
+	line = f.readline()
+	if line != &#39;&#39;:
+		str = &#39; &#39;.join(line.split())
+		nf.write(str+&#39;\n&#39;)
+	else:
+		done = 1
+f.close()
+nf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+				<pubDate>Tue, 14 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/11/14/python-split-space.html</link>
+				<guid isPermaLink="true">/programmer/2017/11/14/python-split-space.html</guid>
+			</item>
+		
+			<item>
+				<title>在caffe使用cifar10例程预测自己的图片</title>
+				<description>&lt;p&gt;  使用caffe/examples/cifar10_full模型进行图片的训练。准备好cifar10分类的图片，任意尺寸都行，将图片和代码存放在cifar10/predict文件夹下，运行代码，即可预测。 &lt;br /&gt;
+  以下是代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import caffe
+import numpy as np
+import cv2
+
+MODEL_FILE = &#39;../cifar10_full.prototxt&#39;
+PRETRAINED = &#39;../cifar10_full_iter_10000.caffemodel&#39;
+IMAGE_FILE = &#39;plane1.jpg&#39;
+
+img = cv2.imread(IMAGE_FILE)
+if img.shape != [32, 32]:
+		img2 = cv2.resize(img, (32, 32))
+		img = img2.reshape(32, 32, -1)
+else:
+		img = img.reshape(32, 32, -1)
+&#39;&#39;&#39;        
+img = caffe.io.load_image(IMAGE_FILE)
+img = caffe.io.resize_image(input_image, (32, 32)) * 255.0
+tmp = img
+tmp[:,:,0] = img[:,:,2]
+tmp[:,:,2] = img[:,:,0]
+img = tmp
+&#39;&#39;&#39;
+input_image = img
+print input_image.shape
+print input_image
+
+net = caffe.Net(MODEL_FILE, PRETRAINED, caffe.TEST)
+caffe.set_mode_cpu()
+res = net.forward_all(data = np.asarray([input_image.transpose(2, 0, 1)]))
+prediction = res[&#39;prob&#39;][0]
+label = {0: &#39;airplane&#39;, 1: &#39;automobile&#39;, 2: &#39;bird&#39;, 3: &#39;cat&#39;, 4: &#39;deer&#39;, 5: &#39;dog&#39;, 6: &#39;frog&#39;, 7: &#39;horse&#39;, 8: &#39;ship&#39;, 9: &#39;truck&#39;}
+print prediction
+print &#39;predicted class:&#39;, label[prediction.argmax()]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt; 有几点要注意一下： &lt;br /&gt;
+ 1、caffe模型使用的彩色图片的通道是BGR，而python得到的图像是RGB，需要手动进行通道转换。opencv读出的数据直接就是BGR的，不需要自己进行转换。 &lt;br /&gt;
+ 2、此模型使用的数据范围是0-255，而caffe.io.load_image得到的是0-1，需要进行转换（io.py中说明了），opencv得到的数据就是0-255的，不需要再进行转换   以上两点可以与前面的手写数字识别的代码比较一下，尤其是数据的值域。&lt;/p&gt;
+</description>
+				<pubDate>Tue, 14 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/11/14/cifar10-predict.html</link>
+				<guid isPermaLink="true">/programmer/2017/11/14/cifar10-predict.html</guid>
+			</item>
+		
+			<item>
+				<title>在caffe下进行手写数字的预测</title>
+				<description>&lt;p&gt;　　本文主要讲解如何用caffe已训练好的模型进行手写数字的预测。准备：1、数字图片。任意尺寸，可以是彩色，也可以是灰度的。如果是灰度的，把下面代码里的彩色转灰度的代码去掉就行。2、已训练好的模型。例如：lenet_iter_10000.caffemodel&lt;/p&gt;
+
+&lt;p&gt;　　预测的步骤比较简单，主要是读取图片、构建网络、前向传播。其中最关键的就是读取图片了。一开始我使用的caffe进行读取图片：caffe.io.load_image(),但是预测结果都是错的，目前还没有发现是什么原因引起的。改用opencv进行读取就对了。代码是根据github上一个例程修改的，这是源代码的链接：&lt;a href=&quot;http://github.com/9crk/caffe-mnist-test&quot;&gt;caffe-mnist-test&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;　　下面直接给出代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    #predict.py
+    import os
+    import caffe
+    import numpy as np
+    import cv2
+	
+    caffe_root = caffe_dir（替换自己的Caffe根目录）
+
+    MODEL_FILE = caffe_root+&#39;examples/mnist/lenet.prototxt&#39;
+    PRETRAINED = caffe_root+&#39;examples/mnist/lenet_iter_10000.caffemodel&#39;
+    IMAGE_FILE = caffe_root+&#39;examples/mnist/test/8.bmp&#39;
+
+    img = cv2.imread(IMAGE_FILE)
+    if img.shape != [28, 28]:
+            img2 = cv2.resize(img, (28, 28))
+            img = img2.reshape(28, 28, -1)
+    else:
+            img = img.reshape(28, 28, -1)
+    input_image = 1.0 - img / 255.0
+    
+    print input_image.shape
+    print input_image
+    input_image = np.dot(input_image, np.transpose([0.3, 0.59, 0.11]))（如果原图是灰度图片，则不需要这步）
+    input_image = input_image[:,:,np.newaxis]（如果读取的数据尺寸就是[28,28,1],则不需要此步骤）
+
+    #img = caffe.io.load_image(IMAGE_FILE, color=False)
+    net = caffe.Net(MODEL_FILE, PRETRAINED, caffe.TEST)
+    caffe.set_mode_cpu()
+    res = net.forward_all(data = np.asarray([input_image.transpose(2, 0, 1)]))
+    prediction = res[&#39;prob&#39;][0]
+    print &#39;predicted class:&#39;, prediction.argmax()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;　　执行以下命令进行预测：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    cd caffe_root
+    python predict.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;　　路径都对的话，就会输出正确的预测分类了。&lt;/p&gt;
+
+&lt;p&gt;　　很庆幸，找到问题根源了。原来caffe.io.load_image()读取到的图片数据0代表黑色，255(1）代表白色，而进行预测的时候，必须反过来，0表示白色，1表示黑色，前面代码中的1-img/255正是这个原因。&lt;/p&gt;
+</description>
+				<pubDate>Mon, 13 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/11/13/predict-mnist-with-caffe.html</link>
+				<guid isPermaLink="true">/programmer/2017/11/13/predict-mnist-with-caffe.html</guid>
+			</item>
+		
+			<item>
+				<title>anaconda 安装opencv3</title>
+				<description>&lt;p&gt;　　安装好opencv3.2，anacaonda, caffe后，发现不能使用opencv, import cv2失败，应该是由于安装caffe后修改了路径，于是用anaconda重新安装了opencv3,解决了不能导入的问题。 &lt;br /&gt;
+　　打开终端，执行命令： &lt;br /&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;
+　　　　conda install --channel https://conda.anaconda.org/menpo opencv3
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;　　验证：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	python　　　
+	import cv2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;　　应该不会报错了&lt;/p&gt;
+</description>
+				<pubDate>Mon, 13 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/11/13/anaconda-install-opencv3.html</link>
+				<guid isPermaLink="true">/programmer/2017/11/13/anaconda-install-opencv3.html</guid>
+			</item>
+		
+			<item>
+				<title>caffe的安装步骤（无GPU版）</title>
+				<description>&lt;p&gt;1、安装anconda: &lt;br /&gt;
+　　系统python版本最好留在2.7，到anconda官网下载anaconda2，按照官网步骤安装（其实就一行语句：bash anaconda***.sh）&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    设置anaconda环境变量：
+        sudo gedit /etc/environment
+    在文件里加上“ :/(anaconda_dir)/anconda/bin  ”（anaconda_dir是你安装anaconda的根目录）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;2、安装opencv3.2: &lt;br /&gt;
+去官网下载opencv的zip包，不要按照某些网站或博客说的一个一个的安装依赖包，很容易出错。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    下载好了之后，解压zip包，打开终端，进入opencv文件夹，执行命令：
+		mkdir build
+		cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .
+   （如果没安装cmake,先安装cmake：sudo apt-get install cmake）
+		make -j4
+	      make install
+	测试是否安装成功
+		python
+		import cv2
+	    cv2.__version__
+   显示版本号，则安装成功。如果显示 no module named cv2，执行：
+	    sudo apt-get install python-opencv
+   或者：
+		pip install opencv-python
+   是opencv-python还是python-opencv,自己试一下，我也忘了。再次测试，如无意外，会显示版本号，说明安装成功。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;3、安装caffe依赖包&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	执行以下命令：
+		sudo apt-get install git
+		sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev 		libhdf5-serial-dev protobuf-compiler
+		sudo apt-get install --no-install-recommends libboost-all-dev
+		sudo apt-get install libatlas-base-dev
+		sudo apt-get install python-dev
+		sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;必须全部安装，中间如有错误，根据终端错误信息自行解决，我遇到的几个问题都是某些文件下载不了，update或upgrade一下就好了&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;4、安装Caffe&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4.1、下载源码
+        sudo apt-get install git（如果已经安装git则不要再次安装）
+        git clone https://github.com/bvlc/caffe.git
+4.2、配置make文件
+        cd caffe/
+        cp Makefile.config.example Makefile.config
+        gedit Makefile.config
+或者
+        vi Makefile.config
+修改宏：
+        CPU_ONLY :=1（去掉前面的注释#即可，后同）
+        USE_OPENCV :=1
+        USE_LEVELDB :=1
+        USE_LMDB :=1
+        OPENCV_VERSION :=2
+        #CUDA_DIR :=/USR/LOCAL/cuda
+修改python链接：
+        ANACONDA_HOME := $(HOME)/anaconda2 #这个是你anaconda所在路径
+        PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
+             $(ANACONDA_HOME)/include/python2.7 \
+             $(ANACONDA_HOME)/lib/python2.7/site-packages/numpy/core/include \
+        PYTHON_LIB := $(ANACONDA_HOME)/lib
+再把原来同样的内容注释掉。
+还需要在库目录这一项加入路径/usr/lib/x86_64-linux-gnu
+
+        # Whatever else you find you need goes here.
+        INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include 
+        LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu
+4.3、编译：
+        cd caffe
+        mkdir build
+        cd build
+        cmake ..
+        cd ..
+        make
+        make install
+        make runtest
+如果中间几个命令有错误，make clean，重新执行，在camke ..之后，cd到caffe文件夹在执行make命令
+如果最后有错误，一般是anaconda的libstdc++.so.6缺少GLIBCXX,执行：
+    	sudo apt-get install lib64stdc++6
+这个命令将会安装最新的libstdc++文件，libstdc++.so.6.xxx，执行：
+        cd /usr/lib64
+        cp libstdc++.so.6.xxx /anaconda_dir/anaconda2/lib
+        cd /anaconda_dir/anaconda2/lib
+        rm -rf libstdc++.so.6
+        sudo ln -s libstdcc.so.6.xxx libstdc++.so.6
+再执行make runtest，一般就可以了。
+4.4、python导入caffe，执行：
+        python
+        import caffe
+如果有错误，一般是no module named caffe，需要设置caffe的变量路径，执行：
+    	sudo gedit /etc/profile
+在文件最后加上：
+        export PYTHONPATH=/caffe_dir/caffe/python:$PYTHONPATH
+        source /etc/profile   caffe_dir是你的caffe安装根目录。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至此，大功告成！！！&lt;/p&gt;
+
+</description>
+				<pubDate>Wed, 08 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/programmer/2017/11/08/caffe-installation-without-gpu.html</link>
+				<guid isPermaLink="true">/programmer/2017/11/08/caffe-installation-without-gpu.html</guid>
+			</item>
+		
+			<item>
+				<title>深度学习入门资料汇总</title>
+				<description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    自己学习深度学习时用到的一些资料。数字代表推荐的学习顺序，其中第五条斯坦福的课可以一开始就学，同时学习其他资料。按照我这个资料的顺序来，可以比较快的入门深度学习的。
+
+    1、《机器学习实战》
+    主要看前几章，KNN、决策树等，了解机器学习原理以及最优化思想，一定要下载相应的实例代码，看懂并运行，可以直观的感受机器学习。
+
+    2、网上一个关于神经网络的完整例程
+    Implementing a Neural Network from Scratch in python.详细地学习一下，可以对深度神经网络有个初步的了解。
+
+    3、《神经网络与深度学习》，Michael Nielsen著
+    此书从易到难讲述了神经网络与深度学习，详细地讲解了反向传播算法与代价函数，最后还讲到了卷积网络。
+
+    4、Youtube视频
+    What is a Neural Network?|DeepLearning,part1; gradient descent, how neural network learn? |Deep Learning,part2
+
+    5、斯坦福李飞飞深度学习相关课程（CS231n）
+    从头到尾看一遍，课后作业也要做。
+
+    6、Lecture:
+    Introduction of Deep Learning, 李宏毅
+
+    7、网上文档：斯坦福深度学习手册整合
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+				<pubDate>Wed, 08 Nov 2017 00:00:00 +0800</pubDate>
+				<link>/material/2017/11/08/Deep-Learning-materials.html</link>
+				<guid isPermaLink="true">/material/2017/11/08/Deep-Learning-materials.html</guid>
+			</item>
+		
+	</channel>
+</rss>

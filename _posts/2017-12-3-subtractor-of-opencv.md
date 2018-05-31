@@ -1,0 +1,36 @@
+---
+layer: post
+title: 实现opencv的背景分离例程
+categories:  Tutorial
+tags: opencv python
+author: zhuwei
+description: python写的opencv的背景分离的例子
+---
+&emsp;&emsp;本代码参考了opencv官方教程，实现对视频（笔记本摄像头图像）的背景分离。代码基于python3.6,opencv3.3。   
+
+    import numpy as np
+    import cv2
+    #cap = cv2.VideoCapture('Video_001.avi')
+    cap = cv2.VideoCapture(0)  #读取摄像头
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))   图像增强（去噪）
+    fgbg = cv2.createBackgroundSubtractorMOG2()   #mog2方法
+    cv2.namedWindow("sourceImg")
+    cv2.namedWindow("fgmask")
+    count = 0
+    for i in range(1, 1500):
+        #frame = cv2.imread("input/%d.png" % (i))
+        ret, frame = cap.read()   #读取一帧图像
+        fgmask = fgbg.apply(frame) #背景分离
+        fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)
+        cv2.imshow('sourceImg', frame)
+        cv2.imshow('fgmask', fgmask)
+        #count = i % 10
+        #if not count:
+            #cv2.imwrite("output/%d.png" % (i), fgmask)
+        k = cv2.waitKey(30) & 0xff
+        if k == 27:
+            break
+    cap.release()
+    cv2.destroyAllWindows()   
+
+[opencv](https://docs.opencv.org/3.3.0/db/d5c/tutorial_py_bg_subtraction.html)

@@ -1,0 +1,28 @@
+# Jekyll configuration
+
+name: weiSupreme
+description: zhuwei的个人网站！
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: ''
+
+# default date_format
+date_format: 
+  title: "%Y年-%m月-%d日"
+  archive: "%m月"
+  categories: "%y年-%m月"
+  tag: "%y年-%m月"
+
+# Language
+lan: "en" 
+
+paginate: 10
+
+highlighter: rouge
+markdown: kramdown
+gems: ['jekyll-paginate']
+
+exclude: ['README.md', 'LICENSE', "*.bak"]

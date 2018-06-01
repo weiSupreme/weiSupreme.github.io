@@ -7,6 +7,21 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>RNN原理通俗理解</title>
+				<description>&lt;p&gt;  转载博客&lt;a href=&quot;https://blog.csdn.net/qq_39422642/article/details/78676567&quot;&gt;循环神经网络（RNN）原理通俗解释&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  转载博客&lt;a href=&quot;https://blog.csdn.net/xingzhedai/article/details/53144126&quot;&gt;循环神经网络(RNN, Recurrent Neural Networks)学习笔记：基础理论&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  转载博客&lt;a href=&quot;https://blog.csdn.net/u010089444/article/details/55211653&quot;&gt;循环神经网络与LSTM&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  知乎问答&lt;a href=&quot;https://www.zhihu.com/question/34681168&quot;&gt;CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Fri, 01 Jun 2018 00:00:00 +0800</pubDate>
+				<link>http://localhost:4000/informalessay/2018/06/01/RNN-understand.html</link>
+				<guid isPermaLink="true">http://localhost:4000/informalessay/2018/06/01/RNN-understand.html</guid>
+			</item>
+		
+			<item>
 				<title>目标检测可能的研究方向</title>
 				<description>&lt;p&gt;  此博客主要收集来自&lt;a href=&quot;https://www.zhihu.com/question/64861580&quot;&gt;知乎&lt;/a&gt;的问答。&lt;/p&gt;
 
@@ -1069,43 +1084,6 @@ for i in range(10000):
 				<pubDate>Fri, 19 Jan 2018 00:00:00 +0800</pubDate>
 				<link>http://localhost:4000/paper/2018/01/19/rcnn-small-object.html</link>
 				<guid isPermaLink="true">http://localhost:4000/paper/2018/01/19/rcnn-small-object.html</guid>
-			</item>
-		
-			<item>
-				<title>基于faster-rcnn的小目标检测</title>
-				<description>&lt;h1 id=&quot;论文组织结构&quot;&gt;论文组织结构&lt;/h1&gt;
-&lt;h2 id=&quot;摘要&quot;&gt;摘要&lt;/h2&gt;
-&lt;p&gt;  介绍文章的主要内容：faster-rcnn，不足。课题，自己的改进，结果。&lt;/p&gt;
-&lt;h2 id=&quot;1-介绍&quot;&gt;1. 介绍&lt;/h2&gt;
-&lt;p&gt;  1. 现有的检测方法：faster-rcnn、下采样。2. 现状：企业logo检测的问题。 3. 本文的贡献。&lt;/p&gt;
-&lt;h2 id=&quot;2-相关工作&quot;&gt;2. 相关工作&lt;/h2&gt;
-&lt;p&gt;  介绍前人工作，其他算法、文献&lt;/p&gt;
-&lt;h2 id=&quot;3-faster-rcnn小物体检测&quot;&gt;3. faster-rcnn小物体检测&lt;/h2&gt;
-&lt;p&gt;  论文主体部分。&lt;/p&gt;
-&lt;h2 id=&quot;4-集成的检测算法&quot;&gt;4. 集成的检测算法&lt;/h2&gt;
-&lt;p&gt;  &lt;/p&gt;
-&lt;h2 id=&quot;5-结论&quot;&gt;5. 结论&lt;/h2&gt;
-&lt;p&gt;  &lt;/p&gt;
-&lt;h1 id=&quot;主要算法&quot;&gt;主要算法&lt;/h1&gt;
-&lt;p&gt;  通过比较在不同conv层以及不同anchors尺度下的rpn性能，得出提升小目标检测精度的方法。在conv4之后加了一个分支用于RPN，提升了rpn的精度。&lt;/p&gt;
-&lt;h1 id=&quot;重要参考文献&quot;&gt;重要参考文献&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;S. Ren, K. He, R. Girshick, and J. Sun, “Faster r-cnn:
-Towards real-time object detection with region proposal
-networks,” IEEE PAMI, 2016.&lt;/li&gt;
-  &lt;li&gt;Zhangyang Wang, Shiyu Chang, Yingzhen Yang, Ding
-Liu, and Thomas S. Huang, “Studying very low res-
-olution recognition using deep networks,” CoRR, vol.
-abs/1601.04153, 2016.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;重要语句&quot;&gt;重要语句&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;/assets/paper/A CLOSER LOOK: SMALL OBJECT DETECTION IN FASTER R-CNN.pdf&quot;&gt;论文原文&lt;/a&gt;&lt;/p&gt;
-</description>
-				<pubDate>Thu, 18 Jan 2018 00:00:00 +0800</pubDate>
-				<link>http://localhost:4000/paper/2018/01/18/small-object-detection-faster-rcnn.html</link>
-				<guid isPermaLink="true">http://localhost:4000/paper/2018/01/18/small-object-detection-faster-rcnn.html</guid>
 			</item>
 		
 	</channel>

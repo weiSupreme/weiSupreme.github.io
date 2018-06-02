@@ -1,8 +1,8 @@
-最新的民族风
+最炫的民族风
 =====
 
 - Blog of zhuwei.
-- Welcome to lost in [zhuwei](http://wei_supreme.github.io/).
+- Welcome to lost in [zhuwei](http://weisupreme.github.io/).
 
                                    _________________
                               ____/:::::::::::::::::\_____

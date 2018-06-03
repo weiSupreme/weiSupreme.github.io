@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RNN原理通俗理解
+title: 循环神经网络RNN和LSTM原理通俗解释及与CNN，DNN比较
 categories: InformalEssay
 tags: DeepLearning
 author: zhuwei

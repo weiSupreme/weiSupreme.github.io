@@ -7,7 +7,7 @@
 		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
-				<title>RNN原理通俗理解</title>
+				<title>循环神经网络RNN和LSTM原理通俗解释及与CNN，DNN比较</title>
 				<description>&lt;p&gt;  转载博客&lt;a href=&quot;https://blog.csdn.net/qq_39422642/article/details/78676567&quot;&gt;循环神经网络（RNN）原理通俗解释&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;  转载博客&lt;a href=&quot;https://blog.csdn.net/xingzhedai/article/details/53144126&quot;&gt;循环神经网络(RNN, Recurrent Neural Networks)学习笔记：基础理论&lt;/a&gt;&lt;/p&gt;

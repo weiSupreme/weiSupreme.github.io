@@ -135,6 +135,9 @@
 <loc>http://localhost:4000/links.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/no-click.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/notes.html</loc>
 </url>
 <url>
@@ -194,8 +197,8 @@
 <lastmod>2018-04-30T21:08:03+08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/baidu_verify_09521yHBz8.html</loc>
-<lastmod>2018-06-02T18:11:40+08:00</lastmod>
+<loc>http://localhost:4000/baidu_verify_vpriiJpEFK.html</loc>
+<lastmod>2018-06-03T12:01:10+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/google57955228e7781956.html</loc>

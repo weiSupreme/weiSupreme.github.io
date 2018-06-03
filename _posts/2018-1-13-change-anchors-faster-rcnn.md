@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 改变faster-rcnn中的anchors数量和尺寸
+title: 如何修改基于深度学习的目标检测算法faster-rcnn中的anchors数量和尺寸， RPN
 categories: Tutorial
 tags: DeepLearning Detection Faster-rcnn
 author: zhuwei

@@ -1,6 +1,6 @@
 ---
 layer: post
-title: 创建VOC2007格式数据集用于训练faster-rcnn
+title: 创建自己的VOC2007格式的数据集用于训练基于深度学习的目标检测算法faster-rcnn
 categories:  Tutorial
 tags: DeepLearning caffe Detection Faster-rcnn
 author: zhuwei

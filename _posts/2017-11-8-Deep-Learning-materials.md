@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 深度学习入门资料汇总
+title: 深度学习入门资料汇总，一步一步学习深度学习，小白必看
 categories: Material
 tags: DeepLearning
 author: zhuwei

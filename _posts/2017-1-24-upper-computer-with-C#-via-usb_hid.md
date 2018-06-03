@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C#上位机之USB_Hid通信
+title: 用于匿名无人机飞控的C#上位机编写之USB_Hid通信
 categories:  Tutorial
 tags: C# 上位机
 author: zhuwei

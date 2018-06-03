@@ -4,7 +4,7 @@ title: RNN原理通俗理解
 categories: InformalEssay
 tags: DeepLearning
 author: zhuwei
-description: RNN原理解释
+description: 循环神经网络RNN和LSTM原理解释及与CNN，DNN比较
 ---
 
                             

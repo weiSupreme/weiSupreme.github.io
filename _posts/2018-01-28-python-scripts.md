@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python代码
+title: 运用基于深度学习的目标检测算法时用到的一些制作数据集的python文件（代码）
 categories: Material
 tags: Python
 author: zhuwei

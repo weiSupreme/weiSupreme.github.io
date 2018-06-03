@@ -1,6 +1,6 @@
 ---
 layer: post
-title: 在caffe使用cifar10例程预测自己的图片
+title: 在caffe框架下使用cifar10例程预测自己的图片
 categories:  Tutorial
 tags: DeepLearning caffe
 author: zhuwei

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: faster-rcnn资料
+title: 基于深度学习的目标检测算法faster-rcnn和RPN网络的相关资料
 categories: Material
 tags: DeepLearning Detection Faster-rcnn
 author: zhuwei

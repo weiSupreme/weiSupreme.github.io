@@ -1,6 +1,6 @@
 ---
 layer: post
-title: 实现opencv的背景分离例程
+title: 利用opencv3.3和python3.6实现背景分离例程
 categories:  Tutorial
 tags: opencv python
 author: zhuwei

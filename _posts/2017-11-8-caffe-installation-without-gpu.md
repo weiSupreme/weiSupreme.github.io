@@ -1,6 +1,6 @@
 ---
 layout: post
-title: caffe的安装步骤（无GPU版）
+title: ubuntu16.04下caffe的安装步骤（CPU only，无GPU版）
 categories:  Tutorial
 tags: DeepLearning caffe
 author: zhuwei

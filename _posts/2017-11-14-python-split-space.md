@@ -1,6 +1,6 @@
 ---
 layer: post
-title: python合并Txt中的空格
+title: 用python合并Txt文档中的空格
 categories:  Tutorial
 tags: file python
 author: zhuwei

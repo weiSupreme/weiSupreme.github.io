@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  批量修改文件名
+title:  用python批量修改文件夹下的文件名
 categories:  Tutorial
 tags: file python
 author: zhuwei

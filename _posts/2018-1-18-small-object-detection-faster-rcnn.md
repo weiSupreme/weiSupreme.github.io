@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 基于faster-rcnn的小目标检测
+title: 基于深度学习目标检测算法faster-rcnn的小目标检测
 categories: Paper
 tags: DeepLearning Detection Faster-rcnn
 author: zhuwei
@@ -33,4 +33,4 @@ abs/1601.04153, 2016.
 # 重要语句		
 
 
-[论文原文](/assets/paper/A CLOSER LOOK: SMALL OBJECT DETECTION IN FASTER R-CNN.pdf)
+[论文原文](https://pan.baidu.com/s/1fH3WyIgS9R5O4JFq-iim4g)

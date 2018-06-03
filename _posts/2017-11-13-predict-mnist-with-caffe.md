@@ -1,6 +1,6 @@
 ---
 layer: post
-title: 在caffe下进行手写数字的预测
+title: 在caffe框架下进行手写数字的预测，mnist
 categories: Tutorial
 tags: DeepLearning caffe
 author: zhuwei

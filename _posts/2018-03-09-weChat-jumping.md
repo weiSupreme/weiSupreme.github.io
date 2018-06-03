@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 用电脑自动玩微信跳一跳
+title: 利用python语言用电脑自动玩手机微信的小程序跳一跳
 categories: Tutorial
-tags: Python Opencv
+tags: Android Python Opencv
 author: zhuwei
 description: 基于opencv3.6和python3.3
 ---

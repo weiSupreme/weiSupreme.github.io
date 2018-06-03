@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SSD references
+title: 关于目标检测算法SSD原理和源代码的一些参考资料
 categories: InformalEssay
 tags: DeepLearning Detection SSD
 author: zhuwei

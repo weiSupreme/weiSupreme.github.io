@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一些检测方面论文的翻译(转载博客)
+title: 基于深度学习的目标检测方面经典论文的翻译，SSD,faster rcnn,yolo
 categories: Translation
 tags: DeepLearning Detection
 author: zhuwei

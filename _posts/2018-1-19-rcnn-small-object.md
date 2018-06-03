@@ -1,6 +1,6 @@
 ---
 layout: post
-title: rcnn用于小目标检测
+title: 基于深度学习的rcnn用于小目标检测的一些改进
 categories: Paper
 tags: DeepLearning Detection Faster-rcnn
 author: zhuwei
@@ -31,4 +31,4 @@ description: “R-CNN for Small Object Detection”
 # 重要语句		
 
 
-[论文原文](/assets/paper/.pdf)
+[论文原文](https://pan.baidu.com/s/1fH3WyIgS9R5O4JFq-iim4g)

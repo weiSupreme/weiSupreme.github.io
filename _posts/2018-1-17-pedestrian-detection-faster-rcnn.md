@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 基于faster-rcnn的行人检测系统
+title: 基于深度学习目标检测算法faster-rcnn的行人检测系统
 categories: Paper
 tags: DeepLearning Detection Faster-rcnn
 author: zhuwei
@@ -50,4 +50,4 @@ Section 5 provides a summary of the paper and possibilities
 for future improvements.		
 
 
-[论文原文](/assets/paper/A Faster RCNN-based Pedestrian Detection System.pdf)
+[论文原文](https://pan.baidu.com/s/1fH3WyIgS9R5O4JFq-iim4g)

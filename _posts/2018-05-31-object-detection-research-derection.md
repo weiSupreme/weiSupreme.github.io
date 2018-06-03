@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 目标检测可能的研究方向
+title: 基于深度学习的目标检测SSD,faster rcnn,YOLO等不足及可能的改进方向
 categories: InformalEssay
 tags: DeepLearning Detection
 author: zhuwei

@@ -13,6 +13,7 @@ description: 使用halcon实现字符识别与训练
        		
 识别结果：
 			![](/assets/images/halcon_ocr_result.png)			
+            
 &emsp;&emsp;训练代码：				
 
     *读取图片

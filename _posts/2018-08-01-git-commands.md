@@ -21,6 +21,11 @@ description: 整理的一些常用的git的命令
             git checkout -b newBranchName
             git checkout brachName
             git branch -a (list all branch)
+            
+            git tag v1.0
+            git tag -a v1.0 -m "describe"
+            git show v1.0
+            git push origin v1.0
 
             git status
 

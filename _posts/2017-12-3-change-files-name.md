@@ -2,7 +2,7 @@
 layout: post
 title:  用python批量修改文件夹下的文件名
 categories:  Tutorial
-tags: file python
+tags: File Python
 author: zhuwei
 description: 修改某文件夹下的所有/部分文件名
 ---

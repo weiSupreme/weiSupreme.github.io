@@ -2,7 +2,7 @@
 layer: post
 title: 用python合并Txt文档中的空格
 categories:  Tutorial
-tags: file python
+tags: File Python
 author: zhuwei
 description: txt文档的操作
 ---

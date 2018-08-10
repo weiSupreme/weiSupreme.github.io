@@ -2,7 +2,7 @@
 layout: post
 title: halcon ocr字符识别与训练
 categories: Tutorial
-tags: Halcon TextRecognition
+tags: Halcon Text_Recognition
 author: zhuwei
 description: 使用halcon实现字符识别与训练
 ---

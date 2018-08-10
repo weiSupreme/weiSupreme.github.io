@@ -2,7 +2,7 @@
 layer: post
 title: anaconda 安装opencv3
 categories:  Tutorial
-tags: opencv
+tags: Opencv
 author: zhuwei
 description: 安装opencv
 ---

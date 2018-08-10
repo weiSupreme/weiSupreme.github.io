@@ -2,7 +2,7 @@
 layout: post
 title:  "初识Github Pages"
 categories:  Tutorial
-tags: GitHub
+tags: Github
 author: 西夏
 description: Github Pages入门之Hello World！
 ---

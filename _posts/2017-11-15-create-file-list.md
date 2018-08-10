@@ -2,7 +2,7 @@
 layer: post
 title: 用linux的sh脚本给文件夹里的图片创建用于caffe的文件列表
 categories:  Tutorial
-tags: file
+tags: File
 author: zhuwei
 description: 创建文件名列表
 ---

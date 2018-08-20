@@ -16,4 +16,6 @@ description: 镜像源
 
 [清华大学](https://pypi.tuna.tsinghua.edu.cn/simple/)				
 
-[中国科学技术大学](http://pypi.mirrors.ustc.edu.cn/simple/)
+[中国科学技术大学](http://pypi.mirrors.ustc.edu.cn/simple/)			
+
+[一些开源软件的国内镜像源](https://blog.csdn.net/u010250863/article/details/70161188)

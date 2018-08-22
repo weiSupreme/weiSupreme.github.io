@@ -8,6 +8,7 @@ layout: default
         <li><a href="{{ file.path }}">{{ file.name }}</a></li>
         {% if file.name contains 'png' %}
             <img src=file.path  />
+        {% endif %}
     {% endif %}
 {% endfor %}
 </div>

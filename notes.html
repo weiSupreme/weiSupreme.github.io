@@ -5,7 +5,7 @@ layout: default
 <div class="well article">
 {% for file in site.static_files %}
     {% if file.path contains 'notes' %}
-        <li><a href="{{ file.path }}">{{ '/assets/notes/@file.name' }}</a></li>
+        <li><a href="{{ file.path }}">{{ '/assets/notes/@file.name'> }}</a></li>
         {% if file.name contains 'png' %}
             <img src='/assets/notes/@file.name' width="40%" />
         {% endif %}

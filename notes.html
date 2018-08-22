@@ -17,7 +17,7 @@ layout: default
     {% if file.path contains 'notes' %}
         {% if file.name contains 'png' %}
             <li><a href="{{ file.path }}">{{ file.name }}</a></li>
-            <img src="{{ file.path }}" width="50%" />
+            <!-- <img src="{{ file.path }}" width="50%" /> -->
         {% endif %}
     {% endif %}
 {% endfor %}

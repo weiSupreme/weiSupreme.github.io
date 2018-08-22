@@ -13,7 +13,7 @@ layout: default
 {% for file in site.static_files %}
     {% if file.path contains 'notes' %}
         {% if file.name contains 'png' %}
-            <img src='/assets/notes/@file.name' height="40%" width="40%" />
+            <img src='/assets/notes/@file.name' width="40%" />
         {% endif %}
     {% endif %}
 {% endfor %}

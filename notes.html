@@ -6,9 +6,6 @@ layout: default
 {% for file in site.static_files %}
     {% if file.path contains 'notes' %}
         <li><a href="{{ file.path }}">{{ file.name }}</a></li>
-        {% if file.name contains 'png' %}
-            <img src="{{ file.path }}">{{ file.name }} width="60%" />
-        {% endif %}
     {% endif %}
 {% endfor %}
 </div>

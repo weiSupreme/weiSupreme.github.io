@@ -5,9 +5,19 @@ layout: default
 <div class="well article">
 {% for file in site.static_files %}
     {% if file.path contains 'notes' %}
-        <li><a href="{{ file.path }}">{{ file.name }}</a></li>
         {% if file.name contains 'png' %}
-            <img src="{{ file.path }}" width="40%" />
+        {% else %}
+            <li><a href="{{ file.path }}">{{ file.name }}</a></li>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</div>
+<div class="well article">
+{% for file in site.static_files %}
+    {% if file.path contains 'notes' %}
+        {% if file.name contains 'png' %}
+            <li><a href="{{ file.path }}">{{ file.name }}</a></li>
+            <img src="{{ file.path }}" width="50%" />
         {% endif %}
     {% endif %}
 {% endfor %}

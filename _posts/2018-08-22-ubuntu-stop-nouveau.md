@@ -31,5 +31,6 @@ description: 解决禁用nouveau驱动后无法进入ubuntu系统的问题
 
 	rm -f /etc/modprobe.d/blacklist-nouveau.conf		
     
-删除后再重启就能进入系统了。这样做相当与恢复了自带nouveau驱动。				
-&emsp;&emsp;接下来继续辛苦地安装英伟达驱动把！！！
+删除后再重启就能进入系统了。这样做相当于恢复了自带nouveau驱动。				
+
+&emsp;&emsp;接下来继续辛苦地安装英伟达驱动吧！！！

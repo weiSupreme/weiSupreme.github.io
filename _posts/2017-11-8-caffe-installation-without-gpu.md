@@ -6,35 +6,21 @@ tags: DeepLearning caffe
 author: zhuwei
 description: 安装深度学习框架caffe
 ---
-1、安装anconda:   
-　　系统python版本最好留在2.7，到anconda官网下载anaconda2，按照官网步骤安装（其实就一行语句：bash anaconda***.sh）
+1、安装anconda:   	
 
 - - -
 
-        设置anaconda环境变量：
-            sudo gedit /etc/environment
-        在文件里加上“ :/(anaconda_dir)/anconda/bin  ”（anaconda_dir是你安装anaconda的根目录）
+        强烈建议不要使用anaconda配置caffe，各种问题！！！
+        强烈建议不要使用anaconda配置caffe，各种问题！！！
+        强烈建议不要使用anaconda配置caffe，各种问题！！！
+    需要什么包，直接下载。如果网速比较慢，可以到国内的镜像源网站下载。
 
 - - -
 
 2、安装opencv3.2:   
-去官网下载opencv的zip包，不要按照某些网站或博客说的一个一个的安装依赖包，很容易出错。
+
 	
-        下载好了之后，解压zip包，打开终端，进入opencv文件夹，执行命令：
-			mkdir build
-			cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local .
-       （如果没安装cmake,先安装cmake：sudo apt-get install cmake）
-			make -j4
-		      make install
-		测试是否安装成功
-			python
-			import cv2
-		    cv2.__version__
-	   显示版本号，则安装成功。如果显示 no module named cv2，执行：
-		    sudo apt-get install python-opencv
-	   或者：
-			pip install opencv-python
-	   是opencv-python还是python-opencv,自己试一下，我也忘了。再次测试，如无意外，会显示版本号，说明安装成功。
+        到国内镜像源网站下载相应的opencv-python.whl包，使用pip安装即可。一般不推荐自己编译opencv，速度慢，组件多。
 
 - - -
 
@@ -56,44 +42,26 @@ description: 安装深度学习框架caffe
 
 - - -
 
-    4.1、下载源码
+ 4.1、下载源码				
+   
             sudo apt-get install git（如果已经安装git则不要再次安装）
             git clone https://github.com/bvlc/caffe.git
-    4.2、配置make文件
-            cd caffe/
-            cp Makefile.config.example Makefile.config
-            gedit Makefile.config
-    或者
-            vi Makefile.config
-    修改宏：
-            CPU_ONLY :=1（去掉前面的注释#即可，后同）
-            USE_OPENCV :=1
-            USE_LEVELDB :=1
-            USE_LMDB :=1
-            OPENCV_VERSION :=2
-            #CUDA_DIR :=/USR/LOCAL/cuda
-    修改python链接：
-            ANACONDA_HOME := $(HOME)/anaconda2 #这个是你anaconda所在路径
-            PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
-                 $(ANACONDA_HOME)/include/python2.7 \
-                 $(ANACONDA_HOME)/lib/python2.7/site-packages/numpy/core/include \
-            PYTHON_LIB := $(ANACONDA_HOME)/lib
-    再把原来同样的内容注释掉。
-    还需要在库目录这一项加入路径/usr/lib/x86_64-linux-gnu
+ 4.2、配置make文件			
+   
+            推荐使用ccmake进行编译，ccmake可以将配置选项可视化，不需要手动配置make文件。如果安装cpu版的caffe，只需将CPU-ONLY置ON即可。如果安装GPU版的，在安装了cuda和cudnn后只需将CPU-ONLY置OFF（默认已经打开了cuudnn），直接生成配置文件并退出即可。
+            sudo apt-get install ccmake-curse-gui
+     安装完后，到对应文件夹运行ccmake，见4.3。出来ccmake gui界面后，按c出来配置选项，然后选择要配置的选项，按enter可进行编辑。再按c重新生成配置选项，按g生成配置文件并退出。如果出现camke warnings,可以忽略，按e退出即可。如果出现cmake errors，则需要根据提示信息修改相应文件，重新配置。
+            
+4.3、编译：
 
-            # Whatever else you find you need goes here.
-            INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include 
-            LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu
-	4.3、编译：
             cd caffe
             mkdir build
             cd build
-            cmake ..
-            cd ..
+            ccmake ..
             make
             make install
             make runtest
-    如果中间几个命令有错误，make clean，重新执行，在camke ..之后，cd到caffe文件夹在执行make命令
+    如果中间几个命令有错误，make clean，重新执行。		
     如果最后有错误，一般是anaconda的libstdc++.so.6缺少GLIBCXX,执行：
         	sudo apt-get install lib64stdc++6
     这个命令将会安装最新的libstdc++文件，libstdc++.so.6.xxx，执行：

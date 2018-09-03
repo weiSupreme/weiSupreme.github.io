@@ -23,7 +23,7 @@ description: 解决禁用nouveau驱动后无法进入ubuntu系统的问题
     	
 然后接着安装英伟达驱动。			
 
-&emsp;&emsp;若安装英伟达驱动识别或直接重启，则会出现无法进入系统的情况，此时需要进入ubuntu recovery模式修复。首先重启进入recovery模式的root命令行，先挂载系统可读写：		
+&emsp;&emsp;若安装英伟达驱动失败或直接重启，则会出现无法进入系统的情况，此时需要进入ubuntu recovery模式修复。首先重启进入recovery模式的root命令行，先挂载系统可读写：		
 
 	mount -o remount,rw /			
     

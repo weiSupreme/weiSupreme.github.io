@@ -26,6 +26,8 @@ description: 整理的一些常用的git的命令
             git tag -a v1.0 -m "describe"
             git show v1.0
             git push origin v1.0
+            git tag -d v1.0
+            git push origin :refs/tags/v1.0				
 
             git status
 

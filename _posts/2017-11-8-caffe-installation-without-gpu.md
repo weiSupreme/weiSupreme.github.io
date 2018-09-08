@@ -49,7 +49,7 @@ description: 安装深度学习框架caffe
  4.2、配置make文件			
    
             推荐使用ccmake进行编译，ccmake可以将配置选项可视化，不需要手动配置make文件。如果安装cpu版的caffe，只需将CPU-ONLY置ON即可。如果安装GPU版的，在安装了cuda和cudnn后只需将CPU-ONLY置OFF（默认已经打开了cuudnn），直接生成配置文件并退出即可。
-            sudo apt-get install ccmake-curse-gui
+            sudo apt-get install cmake-curses-gui
      安装完后，到对应文件夹运行ccmake，见4.3。出来ccmake gui界面后，按c出来配置选项，然后选择要配置的选项，按enter可进行编辑。再按c重新生成配置选项，按g生成配置文件并退出。如果出现camke warnings,可以忽略，按e退出即可。如果出现cmake errors，则需要根据提示信息修改相应文件，重新配置。
             
 4.3、编译：

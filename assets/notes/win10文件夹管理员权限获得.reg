@@ -1,0 +1,28 @@
+Windows Registry Editor Version 5.00
+;取得文件修改权限  
+[HKEY_CLASSES_ROOT\*\shell\runas]  
+@="管理员权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,102"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\*\shell\runas\command]  
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_CLASSES_ROOT\exefile\shell\runas2]  
+@="管理员权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,102"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\exefile\shell\runas2\command]  
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_CLASSES_ROOT\Directory\shell\runas]  
+@="管理员权限"
+"Icon"="C:\\Windows\\System32\\imageres.dll,102"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]  
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+--------------------- 
+作者：Jugg_VS_Spe_细节多到爆炸 
+来源：CSDN 
+原文：https://blog.csdn.net/hanshou101/article/details/78372632?utm_source=copy 
+版权声明：本文为博主原创文章，转载请附上博文链接！

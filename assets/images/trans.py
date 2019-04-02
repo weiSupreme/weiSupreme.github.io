@@ -1,4 +1,4 @@
 import cv2
 
-img=cv2.imread('favicon.bmp')
-cv2.imwrite('favicon.png',img)
+img=cv2.imread('wei.png',0)
+cv2.imwrite('wei.png',img)

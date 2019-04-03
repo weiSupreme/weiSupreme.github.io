@@ -1,207 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
-<loc>http://localhost:4000/tutorial/2016/05/27/PX4-notes-uorb.html</loc>
-<lastmod>2016-05-27T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/01/24/upper-computer-with-C-via-usb_hid.html</loc>
-<lastmod>2017-01-24T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/categories.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/09/11/hello-world-of-github-pages.html</loc>
-<lastmod>2017-09-11T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tags.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/material/2017/11/08/Deep-Learning-materials.html</loc>
-<lastmod>2017-11-08T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/about.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/11/08/caffe-installation-without-gpu.html</loc>
-<lastmod>2017-11-08T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/baidu_verify_vpriiJpEFK.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/11/13/anaconda-install-opencv3.html</loc>
-<lastmod>2017-11-13T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/google57955228e7781956.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/11/13/predict-mnist-with-caffe.html</loc>
-<lastmod>2017-11-13T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/2019/04/02/996.icu.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/11/14/cifar10-predict.html</loc>
-<lastmod>2017-11-14T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/informalessay/2018/08/11/note-anytime.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/11/14/python-split-space.html</loc>
-<lastmod>2017-11-14T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/informalessay/2018/08/10/image-sources.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/11/15/create-file-list.html</loc>
-<lastmod>2017-11-15T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2018/05/20/ubuntu16.04-cuda8.0-cudnn5.1.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/12/03/change-files-name.html</loc>
-<lastmod>2017-12-03T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/notes.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/12/03/subtractor-of-opencv.html</loc>
-<lastmod>2017-12-03T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/scripts.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2017/12/26/train-with-fasterRcnn.html</loc>
-<lastmod>2017-12-26T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/no-click.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/translation/2018/01/03/dehazeNet-translation.html</loc>
-<lastmod>2018-01-03T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2018/09/20/C-delegate.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/material/2018/01/03/fasterRcnn-materials.html</loc>
-<lastmod>2018-01-03T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2018/09/03/opencv-svm-digits.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper/2018/01/03/paper-DL-detection.html</loc>
-<lastmod>2018-01-03T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2018/08/22/ubuntu-stop-nouveau.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2018/01/13/change-anchors-faster-rcnn.html</loc>
-<lastmod>2018-01-13T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2018/08/08/halcon-ocr.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper/2018/01/17/pedestrian-detection-faster-rcnn.html</loc>
-<lastmod>2018-01-17T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/informalessay/2018/08/01/git-commands.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper/2018/01/18/small-object-detection-faster-rcnn.html</loc>
-<lastmod>2018-01-18T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/informalessay/2018/06/01/RNN-understand.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper/2018/01/19/rcnn-small-object.html</loc>
-<lastmod>2018-01-19T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/informalessay/2018/05/31/object-detection-research-derection.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/material/2018/01/28/python-scripts.html</loc>
-<lastmod>2018-01-28T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/informalessay/2018/03/22/SSD-references.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper/2018/03/03/detection-papers-note.html</loc>
-<lastmod>2018-03-03T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/material/2018/01/28/python-scripts.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper/2018/03/05/paper-writting.html</loc>
-<lastmod>2018-03-05T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/material/2018/01/03/fasterRcnn-materials.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2018/03/09/weChat-jumping.html</loc>
-<lastmod>2018-03-09T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/material/2017/11/08/Deep-Learning-materials.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/informalessay/2018/03/22/SSD-references.html</loc>
-<lastmod>2018-03-22T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/paper/2018/03/05/paper-writting.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/translation/2018/04/30/detection-paper-translation.html</loc>
-<lastmod>2018-04-30T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/paper/2018/03/03/detection-papers-note.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tutorial/2018/05/20/ubuntu16.04-cuda8.0-cudnn5.1.html</loc>
-<lastmod>2018-05-20T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/paper/2018/01/19/rcnn-small-object.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/informalessay/2018/05/31/object-detection-research-derection.html</loc>
-<lastmod>2018-05-31T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/paper/2018/01/18/small-object-detection-faster-rcnn.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/informalessay/2018/06/01/RNN-understand.html</loc>
-<lastmod>2018-06-01T00:00:00+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/paper/2018/01/17/pedestrian-detection-faster-rcnn.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/2017-12-03-test.html</loc>
+  <loc>https://inhuman-996.xyz/paper/2018/01/03/paper-DL-detection.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/about.html</loc>
+  <loc>https://inhuman-996.xyz/translation/2018/04/30/detection-paper-translation.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/archive.html</loc>
+  <loc>https://inhuman-996.xyz/translation/2018/01/03/dehazeNet-translation.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/categories.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2018/03/09/weChat-jumping.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2018/01/13/change-anchors-faster-rcnn.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/links.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/12/26/train-with-fasterRcnn.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/no-click.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/12/03/subtractor-of-opencv.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/notes.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/12/03/change-files-name.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/paper_notes_template.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/11/15/create-file-list.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/scripts.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/11/14/python-split-space.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/sources.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/11/14/cifar10-predict.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/tags.html</loc>
+  <loc>https://inhuman-996.xyz/tutorial/2017/11/13/predict-mnist-with-caffe.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/examples_of_cmake_usages.html</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2017/11/13/anaconda-install-opencv3.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/frequent_usages_of_git.html</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2017/11/08/caffe-installation-without-gpu.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/generate-voc2007-for-fasterRcnn.pdf</loc>
-<lastmod>2018-04-30T21:08:02+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2017/09/11/hello-world-of-github-pages.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/git-cheatsheet.pdf</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2017/01/24/upper-computer-with-C-via-usb_hid.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/git_giveup_localPilish_and_update%20.html</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/tutorial/2016/05/27/PX4-notes-uorb.html</loc>
+  <lastmod>2019-04-03T11:56:37+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/summary_of_git_usage.html</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/cmake%E7%94%A8%E6%B3%95.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/train-ownData-fasterRcnn.pdf</loc>
-<lastmod>2018-04-30T21:08:02+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/fasterRcnn%E8%AE%AD%E7%BB%83%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86.pdf</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/ubuntu_install_deb_file.pdf</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/git-cheatsheet.pdf</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/notes/ubunut_delete_derectory.html</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/sources/dehazeNet/dehazeNet-translation.pdf</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/git%E6%94%BE%E5%BC%83%E6%9C%AC%E5%9C%B0%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/assets/sources/dehazeNet/dehazeNet.pdf</loc>
-<lastmod>2018-04-30T21:08:03+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/git%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/baidu_verify_vpriiJpEFK.html</loc>
-<lastmod>2018-06-03T12:01:10+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/git%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E6%9B%B4%E6%96%B0.shtml</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>http://localhost:4000/google57955228e7781956.html</loc>
-<lastmod>2018-06-02T14:48:13+08:00</lastmod>
+  <loc>https://inhuman-996.xyz/assets/notes/opencv%E9%94%AE%E7%9B%98%E5%AF%B9%E5%BA%94%E6%95%B0%E5%AD%97.txt</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/ubuntu%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95.html</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/ubuntu%E5%AE%89%E8%A3%85deb%E6%96%87%E4%BB%B6.pdf</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E5%88%B6%E4%BD%9C%E7%94%A8%E4%BA%8E%E8%AE%AD%E7%BB%83fasterRcnn%E7%9A%84voc2007%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E9%9B%86.pdf</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E6%8A%A5%E5%91%8A.docx</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E5%9B%BD%E5%86%85%E4%BC%9A%E8%AE%AE%E7%9B%AE%E5%BD%95Microsoft%20Office%20Word%20%E6%96%87%E6%A1%A3.docx</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90.txt</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E5%9B%BD%E9%99%85%E4%BC%9A%E8%AE%AE%E7%9B%AE%E5%BD%95Microsoft%20Office%20Word%20%E6%96%87%E6%A1%A3.docx</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E6%B9%96%E5%8D%97%E5%A4%A7%E5%AD%A6%E7%94%B5%E6%B0%94%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A5%96%E5%AD%A6%E9%87%91%E8%AF%84%E5%88%86%E7%BB%86%E5%88%99%EF%BC%8820171213%E6%96%B0%EF%BC%89.docx</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://inhuman-996.xyz/assets/notes/%E9%AB%98%E6%B0%B4%E5%B9%B3%E6%9C%9F%E5%88%8A%E7%9B%AE%E5%BD%95%20Microsoft%20Office%20Word%20%E6%96%87%E6%A1%A3.docx</loc>
+  <lastmod>2019-04-03T11:56:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>

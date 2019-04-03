@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="{{ page.summary | escape }}"> 
+    <meta name="keywords" content="{{ page.tags | join: ' ' | escape }}"/> 
     <title>{{ site.name }}</title>
         <link rel="icon" href="{{ site.baseurl }}/assets/images/wei.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

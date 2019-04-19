@@ -28,4 +28,6 @@ description: 深度学习资料
         6、Lecture:
         Introduction of Deep Learning, 李宏毅
     
-        7、网上文档：斯坦福深度学习手册整合
+        7、网上文档：斯坦福深度学习手册整合		
+        
+        8、[神经网络与深度学习](https://nndl.github.io/)		
